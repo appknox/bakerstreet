@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.appknox.bakerstreet;
+
+message Message {
+  string Title = 1;
+  string Description = 2;
+}
+
+message Package {
+  string Name = 1;
+}
+
+message Device {
+  string Url = 1;
+  string Name = 2;
+  string Uuid = 3;
+  bool IsTablet = 4;
+  int32 Platform = 5;
+  string NotifyUrl = 6;
+  string SerialNumber = 8;
+  bool IsProxyEnabled = 7;
+  string PlatformVersion = 9;
+}
+
+service Agent {
+  rpc Info(Message) returns (Device);
+  rpc Echo(Message) returns (Message);
+  rpc LaunchApp(Message) returns (Message);
+  rpc HealthCheck(Message) returns (Message);
+  rpc RemovePackage(Message) returns (Message);
+  rpc InstallPackage(Message) returns (Message);
+  rpc ListPackages(Message) returns (stream Package);
+}
