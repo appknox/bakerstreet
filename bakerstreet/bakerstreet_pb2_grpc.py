@@ -4,7 +4,7 @@ import grpc
 import bakerstreet_pb2 as bakerstreet__pb2
 
 
-class AgentStub(object):
+class BakerstreetStub(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -15,43 +15,43 @@ class AgentStub(object):
       channel: A grpc.Channel.
     """
     self.Info = channel.unary_unary(
-        '/com.appknox.bakerstreet.Agent/Info',
+        '/com.appknox.bakerstreet.Bakerstreet/Info',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Device.FromString,
         )
     self.Echo = channel.unary_unary(
-        '/com.appknox.bakerstreet.Agent/Echo',
+        '/com.appknox.bakerstreet.Bakerstreet/Echo',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.LaunchApp = channel.unary_unary(
-        '/com.appknox.bakerstreet.Agent/LaunchApp',
+        '/com.appknox.bakerstreet.Bakerstreet/LaunchApp',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.HealthCheck = channel.unary_unary(
-        '/com.appknox.bakerstreet.Agent/HealthCheck',
+        '/com.appknox.bakerstreet.Bakerstreet/HealthCheck',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.RemovePackage = channel.unary_unary(
-        '/com.appknox.bakerstreet.Agent/RemovePackage',
+        '/com.appknox.bakerstreet.Bakerstreet/RemovePackage',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.InstallPackage = channel.unary_unary(
-        '/com.appknox.bakerstreet.Agent/InstallPackage',
+        '/com.appknox.bakerstreet.Bakerstreet/InstallPackage',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.ListPackages = channel.unary_stream(
-        '/com.appknox.bakerstreet.Agent/ListPackages',
+        '/com.appknox.bakerstreet.Bakerstreet/ListPackages',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Package.FromString,
         )
 
 
-class AgentServicer(object):
+class BakerstreetServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -105,7 +105,7 @@ class AgentServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_AgentServicer_to_server(servicer, server):
+def add_BakerstreetServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'Info': grpc.unary_unary_rpc_method_handler(
           servicer.Info,
@@ -144,5 +144,5 @@ def add_AgentServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'com.appknox.bakerstreet.Agent', rpc_method_handlers)
+      'com.appknox.bakerstreet.Bakerstreet', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

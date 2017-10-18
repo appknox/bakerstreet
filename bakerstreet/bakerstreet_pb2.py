@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bakerstreet.proto',
   package='com.appknox.bakerstreet',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"-\n\x07Message\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x17\n\x07Package\x12\x0c\n\x04Name\x18\x01 \x01(\t\"\xaf\x01\n\x06\x44\x65vice\x12\x0b\n\x03Url\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0c\n\x04Uuid\x18\x03 \x01(\t\x12\x10\n\x08IsTablet\x18\x04 \x01(\x08\x12\x10\n\x08Platform\x18\x05 \x01(\x05\x12\x11\n\tNotifyUrl\x18\x06 \x01(\t\x12\x14\n\x0cSerialNumber\x18\x08 \x01(\t\x12\x16\n\x0eIsProxyEnabled\x18\x07 \x01(\x08\x12\x17\n\x0fPlatformVersion\x18\t \x01(\t2\xc3\x04\n\x05\x41gent\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Package0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"-\n\x07Message\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x17\n\x07Package\x12\x0c\n\x04Name\x18\x01 \x01(\t\"\xaf\x01\n\x06\x44\x65vice\x12\x0b\n\x03Url\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0c\n\x04Uuid\x18\x03 \x01(\t\x12\x10\n\x08IsTablet\x18\x04 \x01(\x08\x12\x10\n\x08Platform\x18\x05 \x01(\x05\x12\x11\n\tNotifyUrl\x18\x06 \x01(\t\x12\x14\n\x0cSerialNumber\x18\x08 \x01(\t\x12\x16\n\x0eIsProxyEnabled\x18\x07 \x01(\x08\x12\x17\n\x0fPlatformVersion\x18\t \x01(\t2\xc9\x04\n\x0b\x42\x61kerstreet\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Package0\x01\x62\x06proto3')
 )
 
 
@@ -208,18 +208,18 @@ _sym_db.RegisterMessage(Device)
 
 
 
-_AGENT = _descriptor.ServiceDescriptor(
-  name='Agent',
-  full_name='com.appknox.bakerstreet.Agent',
+_BAKERSTREET = _descriptor.ServiceDescriptor(
+  name='Bakerstreet',
+  full_name='com.appknox.bakerstreet.Bakerstreet',
   file=DESCRIPTOR,
   index=0,
   options=None,
   serialized_start=297,
-  serialized_end=876,
+  serialized_end=882,
   methods=[
   _descriptor.MethodDescriptor(
     name='Info',
-    full_name='com.appknox.bakerstreet.Agent.Info',
+    full_name='com.appknox.bakerstreet.Bakerstreet.Info',
     index=0,
     containing_service=None,
     input_type=_MESSAGE,
@@ -228,7 +228,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Echo',
-    full_name='com.appknox.bakerstreet.Agent.Echo',
+    full_name='com.appknox.bakerstreet.Bakerstreet.Echo',
     index=1,
     containing_service=None,
     input_type=_MESSAGE,
@@ -237,7 +237,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='LaunchApp',
-    full_name='com.appknox.bakerstreet.Agent.LaunchApp',
+    full_name='com.appknox.bakerstreet.Bakerstreet.LaunchApp',
     index=2,
     containing_service=None,
     input_type=_MESSAGE,
@@ -246,7 +246,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='HealthCheck',
-    full_name='com.appknox.bakerstreet.Agent.HealthCheck',
+    full_name='com.appknox.bakerstreet.Bakerstreet.HealthCheck',
     index=3,
     containing_service=None,
     input_type=_MESSAGE,
@@ -255,7 +255,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RemovePackage',
-    full_name='com.appknox.bakerstreet.Agent.RemovePackage',
+    full_name='com.appknox.bakerstreet.Bakerstreet.RemovePackage',
     index=4,
     containing_service=None,
     input_type=_MESSAGE,
@@ -264,7 +264,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='InstallPackage',
-    full_name='com.appknox.bakerstreet.Agent.InstallPackage',
+    full_name='com.appknox.bakerstreet.Bakerstreet.InstallPackage',
     index=5,
     containing_service=None,
     input_type=_MESSAGE,
@@ -273,7 +273,7 @@ _AGENT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListPackages',
-    full_name='com.appknox.bakerstreet.Agent.ListPackages',
+    full_name='com.appknox.bakerstreet.Bakerstreet.ListPackages',
     index=6,
     containing_service=None,
     input_type=_MESSAGE,
@@ -281,9 +281,9 @@ _AGENT = _descriptor.ServiceDescriptor(
     options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_AGENT)
+_sym_db.RegisterServiceDescriptor(_BAKERSTREET)
 
-DESCRIPTOR.services_by_name['Agent'] = _AGENT
+DESCRIPTOR.services_by_name['Bakerstreet'] = _BAKERSTREET
 
 try:
   # THESE ELEMENTS WILL BE DEPRECATED.
@@ -295,7 +295,7 @@ try:
   from grpc.framework.interfaces.face import utilities as face_utilities
 
 
-  class AgentStub(object):
+  class BakerstreetStub(object):
     # missing associated documentation comment in .proto file
     pass
 
@@ -306,43 +306,43 @@ try:
         channel: A grpc.Channel.
       """
       self.Info = channel.unary_unary(
-          '/com.appknox.bakerstreet.Agent/Info',
+          '/com.appknox.bakerstreet.Bakerstreet/Info',
           request_serializer=Message.SerializeToString,
           response_deserializer=Device.FromString,
           )
       self.Echo = channel.unary_unary(
-          '/com.appknox.bakerstreet.Agent/Echo',
+          '/com.appknox.bakerstreet.Bakerstreet/Echo',
           request_serializer=Message.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.LaunchApp = channel.unary_unary(
-          '/com.appknox.bakerstreet.Agent/LaunchApp',
+          '/com.appknox.bakerstreet.Bakerstreet/LaunchApp',
           request_serializer=Message.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.HealthCheck = channel.unary_unary(
-          '/com.appknox.bakerstreet.Agent/HealthCheck',
+          '/com.appknox.bakerstreet.Bakerstreet/HealthCheck',
           request_serializer=Message.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.RemovePackage = channel.unary_unary(
-          '/com.appknox.bakerstreet.Agent/RemovePackage',
+          '/com.appknox.bakerstreet.Bakerstreet/RemovePackage',
           request_serializer=Message.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.InstallPackage = channel.unary_unary(
-          '/com.appknox.bakerstreet.Agent/InstallPackage',
+          '/com.appknox.bakerstreet.Bakerstreet/InstallPackage',
           request_serializer=Message.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.ListPackages = channel.unary_stream(
-          '/com.appknox.bakerstreet.Agent/ListPackages',
+          '/com.appknox.bakerstreet.Bakerstreet/ListPackages',
           request_serializer=Message.SerializeToString,
           response_deserializer=Package.FromString,
           )
 
 
-  class AgentServicer(object):
+  class BakerstreetServicer(object):
     # missing associated documentation comment in .proto file
     pass
 
@@ -396,7 +396,7 @@ try:
       raise NotImplementedError('Method not implemented!')
 
 
-  def add_AgentServicer_to_server(servicer, server):
+  def add_BakerstreetServicer_to_server(servicer, server):
     rpc_method_handlers = {
         'Info': grpc.unary_unary_rpc_method_handler(
             servicer.Info,
@@ -435,11 +435,11 @@ try:
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-        'com.appknox.bakerstreet.Agent', rpc_method_handlers)
+        'com.appknox.bakerstreet.Bakerstreet', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
-  class BetaAgentServicer(object):
+  class BetaBakerstreetServicer(object):
     """The Beta API is deprecated for 0.15.0 and later.
 
     It is recommended to use the GA API (classes and functions in this
@@ -477,7 +477,7 @@ try:
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
-  class BetaAgentStub(object):
+  class BetaBakerstreetStub(object):
     """The Beta API is deprecated for 0.15.0 and later.
 
     It is recommended to use the GA API (classes and functions in this
@@ -521,66 +521,66 @@ try:
       raise NotImplementedError()
 
 
-  def beta_create_Agent_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
+  def beta_create_Bakerstreet_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
     """The Beta API is deprecated for 0.15.0 and later.
 
     It is recommended to use the GA API (classes and functions in this
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('com.appknox.bakerstreet.Agent', 'Echo'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'HealthCheck'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'Info'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'InstallPackage'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'LaunchApp'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'ListPackages'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'RemovePackage'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Echo'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'HealthCheck'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Info'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): Message.FromString,
     }
     response_serializers = {
-      ('com.appknox.bakerstreet.Agent', 'Echo'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'HealthCheck'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'Info'): Device.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'InstallPackage'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'LaunchApp'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'ListPackages'): Package.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'RemovePackage'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Echo'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'HealthCheck'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Info'): Device.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Package.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): Message.SerializeToString,
     }
     method_implementations = {
-      ('com.appknox.bakerstreet.Agent', 'Echo'): face_utilities.unary_unary_inline(servicer.Echo),
-      ('com.appknox.bakerstreet.Agent', 'HealthCheck'): face_utilities.unary_unary_inline(servicer.HealthCheck),
-      ('com.appknox.bakerstreet.Agent', 'Info'): face_utilities.unary_unary_inline(servicer.Info),
-      ('com.appknox.bakerstreet.Agent', 'InstallPackage'): face_utilities.unary_unary_inline(servicer.InstallPackage),
-      ('com.appknox.bakerstreet.Agent', 'LaunchApp'): face_utilities.unary_unary_inline(servicer.LaunchApp),
-      ('com.appknox.bakerstreet.Agent', 'ListPackages'): face_utilities.unary_stream_inline(servicer.ListPackages),
-      ('com.appknox.bakerstreet.Agent', 'RemovePackage'): face_utilities.unary_unary_inline(servicer.RemovePackage),
+      ('com.appknox.bakerstreet.Bakerstreet', 'Echo'): face_utilities.unary_unary_inline(servicer.Echo),
+      ('com.appknox.bakerstreet.Bakerstreet', 'HealthCheck'): face_utilities.unary_unary_inline(servicer.HealthCheck),
+      ('com.appknox.bakerstreet.Bakerstreet', 'Info'): face_utilities.unary_unary_inline(servicer.Info),
+      ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): face_utilities.unary_unary_inline(servicer.InstallPackage),
+      ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): face_utilities.unary_unary_inline(servicer.LaunchApp),
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): face_utilities.unary_stream_inline(servicer.ListPackages),
+      ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): face_utilities.unary_unary_inline(servicer.RemovePackage),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
     return beta_implementations.server(method_implementations, options=server_options)
 
 
-  def beta_create_Agent_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
+  def beta_create_Bakerstreet_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
     """The Beta API is deprecated for 0.15.0 and later.
 
     It is recommended to use the GA API (classes and functions in this
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('com.appknox.bakerstreet.Agent', 'Echo'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'HealthCheck'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'Info'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'InstallPackage'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'LaunchApp'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'ListPackages'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Agent', 'RemovePackage'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Echo'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'HealthCheck'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Info'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): Message.SerializeToString,
     }
     response_deserializers = {
-      ('com.appknox.bakerstreet.Agent', 'Echo'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'HealthCheck'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'Info'): Device.FromString,
-      ('com.appknox.bakerstreet.Agent', 'InstallPackage'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'LaunchApp'): Message.FromString,
-      ('com.appknox.bakerstreet.Agent', 'ListPackages'): Package.FromString,
-      ('com.appknox.bakerstreet.Agent', 'RemovePackage'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Echo'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'HealthCheck'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'Info'): Device.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): Message.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Package.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): Message.FromString,
     }
     cardinalities = {
       'Echo': cardinality.Cardinality.UNARY_UNARY,
@@ -592,7 +592,7 @@ try:
       'RemovePackage': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
-    return beta_implementations.dynamic_stub(channel, 'com.appknox.bakerstreet.Agent', cardinalities, options=stub_options)
+    return beta_implementations.dynamic_stub(channel, 'com.appknox.bakerstreet.Bakerstreet', cardinalities, options=stub_options)
 except ImportError:
   pass
 # @@protoc_insertion_point(module_scope)

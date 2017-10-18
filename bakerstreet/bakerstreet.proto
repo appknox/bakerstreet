@@ -23,7 +23,7 @@ message Device {
   string PlatformVersion = 9;
 }
 
-service Agent {
+service Bakerstreet {
   rpc Info(Message) returns (Device);
   rpc Echo(Message) returns (Message);
   rpc LaunchApp(Message) returns (Message);
