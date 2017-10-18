@@ -12,3 +12,6 @@ python -m grpc_tools.protoc \
 	--python_out=$BAKERSTREET \
 	--grpc_python_out=$BAKERSTREET \
 	$PROTOFILE
+
+sed -i "s/import ${BAKERSTREET}_pb2/import $BAKERSTREET.${BAKERSTREET}_pb2/" $BAKERSTREET/${BAKERSTREET}_pb2_grpc.py
+
