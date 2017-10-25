@@ -4,7 +4,7 @@ import grpc
 import bakerstreet.bakerstreet_pb2 as bakerstreet__pb2
 
 
-class BakerstreetStub(object):
+class MoriartyStub(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -15,43 +15,43 @@ class BakerstreetStub(object):
       channel: A grpc.Channel.
     """
     self.Info = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/Info',
+        '/com.appknox.bakerstreet.Moriarty/Info',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Device.FromString,
         )
     self.Echo = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/Echo',
+        '/com.appknox.bakerstreet.Moriarty/Echo',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.LaunchApp = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/LaunchApp',
+        '/com.appknox.bakerstreet.Moriarty/LaunchApp',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.HealthCheck = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/HealthCheck',
+        '/com.appknox.bakerstreet.Moriarty/HealthCheck',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.RemovePackage = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/RemovePackage',
+        '/com.appknox.bakerstreet.Moriarty/RemovePackage',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.InstallPackage = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/InstallPackage',
+        '/com.appknox.bakerstreet.Moriarty/InstallPackage',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
     self.ListPackages = channel.unary_unary(
-        '/com.appknox.bakerstreet.Bakerstreet/ListPackages',
+        '/com.appknox.bakerstreet.Moriarty/ListPackages',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Packages.FromString,
         )
 
 
-class BakerstreetServicer(object):
+class MoriartyServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -105,7 +105,7 @@ class BakerstreetServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_BakerstreetServicer_to_server(servicer, server):
+def add_MoriartyServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'Info': grpc.unary_unary_rpc_method_handler(
           servicer.Info,
@@ -144,5 +144,64 @@ def add_BakerstreetServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'com.appknox.bakerstreet.Bakerstreet', rpc_method_handlers)
+      'com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
+  server.add_generic_rpc_handlers((generic_handler,))
+
+
+class MycroftStub(object):
+  # missing associated documentation comment in .proto file
+  pass
+
+  def __init__(self, channel):
+    """Constructor.
+
+    Args:
+      channel: A grpc.Channel.
+    """
+    self.Poll = channel.unary_unary(
+        '/com.appknox.bakerstreet.Mycroft/Poll',
+        request_serializer=bakerstreet__pb2.Device.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Message.FromString,
+        )
+    self.PushFinding = channel.unary_unary(
+        '/com.appknox.bakerstreet.Mycroft/PushFinding',
+        request_serializer=bakerstreet__pb2.Finding.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Message.FromString,
+        )
+
+
+class MycroftServicer(object):
+  # missing associated documentation comment in .proto file
+  pass
+
+  def Poll(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def PushFinding(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+
+def add_MycroftServicer_to_server(servicer, server):
+  rpc_method_handlers = {
+      'Poll': grpc.unary_unary_rpc_method_handler(
+          servicer.Poll,
+          request_deserializer=bakerstreet__pb2.Device.FromString,
+          response_serializer=bakerstreet__pb2.Message.SerializeToString,
+      ),
+      'PushFinding': grpc.unary_unary_rpc_method_handler(
+          servicer.PushFinding,
+          request_deserializer=bakerstreet__pb2.Finding.FromString,
+          response_serializer=bakerstreet__pb2.Message.SerializeToString,
+      ),
+  }
+  generic_handler = grpc.method_handlers_generic_handler(
+      'com.appknox.bakerstreet.Mycroft', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

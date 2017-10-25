@@ -18,7 +18,12 @@ message Device {
   string PlatformVersion = 4;
 }
 
-service Bakerstreet {
+message Finding {
+  string Title = 1;
+  string Description = 2;
+}
+
+service Moriarty {
   rpc Info(Message) returns (Device);
   rpc Echo(Message) returns (Message);
   rpc LaunchApp(Message) returns (Message);
@@ -26,4 +31,9 @@ service Bakerstreet {
   rpc RemovePackage(Message) returns (Message);
   rpc InstallPackage(Message) returns (Message);
   rpc ListPackages(Message) returns (Packages);
+}
+
+service Mycroft {
+  rpc Poll(Device) returns (Message);
+  rpc PushFinding(Finding) returns (Message);
 }
