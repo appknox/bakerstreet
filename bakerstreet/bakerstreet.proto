@@ -7,20 +7,15 @@ message Message {
   string Description = 2;
 }
 
-message Package {
-  string Name = 1;
+message Packages {
+  repeated string Names = 1;
 }
 
 message Device {
-  string Url = 1;
-  string Name = 2;
-  string Uuid = 3;
-  bool IsTablet = 4;
-  int32 Platform = 5;
-  string NotifyUrl = 6;
-  string SerialNumber = 8;
-  bool IsProxyEnabled = 7;
-  string PlatformVersion = 9;
+  string Uuid = 1;
+  bool IsTablet = 2;
+  int32 Platform = 3;
+  string PlatformVersion = 4;
 }
 
 service Bakerstreet {
@@ -30,5 +25,5 @@ service Bakerstreet {
   rpc HealthCheck(Message) returns (Message);
   rpc RemovePackage(Message) returns (Message);
   rpc InstallPackage(Message) returns (Message);
-  rpc ListPackages(Message) returns (stream Package);
+  rpc ListPackages(Message) returns (Packages);
 }

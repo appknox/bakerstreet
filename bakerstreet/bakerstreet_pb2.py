@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bakerstreet.proto',
   package='com.appknox.bakerstreet',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"-\n\x07Message\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x17\n\x07Package\x12\x0c\n\x04Name\x18\x01 \x01(\t\"\xaf\x01\n\x06\x44\x65vice\x12\x0b\n\x03Url\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0c\n\x04Uuid\x18\x03 \x01(\t\x12\x10\n\x08IsTablet\x18\x04 \x01(\x08\x12\x10\n\x08Platform\x18\x05 \x01(\x05\x12\x11\n\tNotifyUrl\x18\x06 \x01(\t\x12\x14\n\x0cSerialNumber\x18\x08 \x01(\t\x12\x16\n\x0eIsProxyEnabled\x18\x07 \x01(\x08\x12\x17\n\x0fPlatformVersion\x18\t \x01(\t2\xc9\x04\n\x0b\x42\x61kerstreet\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Package0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"-\n\x07Message\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\x08Packages\x12\r\n\x05Names\x18\x01 \x03(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t2\xc8\x04\n\x0b\x42\x61kerstreet\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a!.com.appknox.bakerstreet.Packagesb\x06proto3')
 )
 
 
@@ -63,17 +63,17 @@ _MESSAGE = _descriptor.Descriptor(
 )
 
 
-_PACKAGE = _descriptor.Descriptor(
-  name='Package',
-  full_name='com.appknox.bakerstreet.Package',
+_PACKAGES = _descriptor.Descriptor(
+  name='Packages',
+  full_name='com.appknox.bakerstreet.Packages',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Name', full_name='com.appknox.bakerstreet.Package.Name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='Names', full_name='com.appknox.bakerstreet.Packages.Names', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -90,7 +90,7 @@ _PACKAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=93,
-  serialized_end=116,
+  serialized_end=118,
 )
 
 
@@ -102,64 +102,29 @@ _DEVICE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Url', full_name='com.appknox.bakerstreet.Device.Url', index=0,
+      name='Uuid', full_name='com.appknox.bakerstreet.Device.Uuid', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Name', full_name='com.appknox.bakerstreet.Device.Name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Uuid', full_name='com.appknox.bakerstreet.Device.Uuid', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='IsTablet', full_name='com.appknox.bakerstreet.Device.IsTablet', index=3,
-      number=4, type=8, cpp_type=7, label=1,
+      name='IsTablet', full_name='com.appknox.bakerstreet.Device.IsTablet', index=1,
+      number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Platform', full_name='com.appknox.bakerstreet.Device.Platform', index=4,
-      number=5, type=5, cpp_type=1, label=1,
+      name='Platform', full_name='com.appknox.bakerstreet.Device.Platform', index=2,
+      number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='NotifyUrl', full_name='com.appknox.bakerstreet.Device.NotifyUrl', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='SerialNumber', full_name='com.appknox.bakerstreet.Device.SerialNumber', index=6,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='IsProxyEnabled', full_name='com.appknox.bakerstreet.Device.IsProxyEnabled', index=7,
-      number=7, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='PlatformVersion', full_name='com.appknox.bakerstreet.Device.PlatformVersion', index=8,
-      number=9, type=9, cpp_type=9, label=1,
+      name='PlatformVersion', full_name='com.appknox.bakerstreet.Device.PlatformVersion', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -176,12 +141,12 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=294,
+  serialized_start=120,
+  serialized_end=203,
 )
 
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
-DESCRIPTOR.message_types_by_name['Package'] = _PACKAGE
+DESCRIPTOR.message_types_by_name['Packages'] = _PACKAGES
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -192,12 +157,12 @@ Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,
   ))
 _sym_db.RegisterMessage(Message)
 
-Package = _reflection.GeneratedProtocolMessageType('Package', (_message.Message,), dict(
-  DESCRIPTOR = _PACKAGE,
+Packages = _reflection.GeneratedProtocolMessageType('Packages', (_message.Message,), dict(
+  DESCRIPTOR = _PACKAGES,
   __module__ = 'bakerstreet_pb2'
-  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Package)
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Packages)
   ))
-_sym_db.RegisterMessage(Package)
+_sym_db.RegisterMessage(Packages)
 
 Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), dict(
   DESCRIPTOR = _DEVICE,
@@ -214,8 +179,8 @@ _BAKERSTREET = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=297,
-  serialized_end=882,
+  serialized_start=206,
+  serialized_end=790,
   methods=[
   _descriptor.MethodDescriptor(
     name='Info',
@@ -277,7 +242,7 @@ _BAKERSTREET = _descriptor.ServiceDescriptor(
     index=6,
     containing_service=None,
     input_type=_MESSAGE,
-    output_type=_PACKAGE,
+    output_type=_PACKAGES,
     options=None,
   ),
 ])
@@ -335,10 +300,10 @@ try:
           request_serializer=Message.SerializeToString,
           response_deserializer=Message.FromString,
           )
-      self.ListPackages = channel.unary_stream(
+      self.ListPackages = channel.unary_unary(
           '/com.appknox.bakerstreet.Bakerstreet/ListPackages',
           request_serializer=Message.SerializeToString,
-          response_deserializer=Package.FromString,
+          response_deserializer=Packages.FromString,
           )
 
 
@@ -428,10 +393,10 @@ try:
             request_deserializer=Message.FromString,
             response_serializer=Message.SerializeToString,
         ),
-        'ListPackages': grpc.unary_stream_rpc_method_handler(
+        'ListPackages': grpc.unary_unary_rpc_method_handler(
             servicer.ListPackages,
             request_deserializer=Message.FromString,
-            response_serializer=Package.SerializeToString,
+            response_serializer=Packages.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -519,6 +484,7 @@ try:
       # missing associated documentation comment in .proto file
       pass
       raise NotImplementedError()
+    ListPackages.future = None
 
 
   def beta_create_Bakerstreet_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -542,7 +508,7 @@ try:
       ('com.appknox.bakerstreet.Bakerstreet', 'Info'): Device.SerializeToString,
       ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Package.SerializeToString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Packages.SerializeToString,
       ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): Message.SerializeToString,
     }
     method_implementations = {
@@ -551,7 +517,7 @@ try:
       ('com.appknox.bakerstreet.Bakerstreet', 'Info'): face_utilities.unary_unary_inline(servicer.Info),
       ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): face_utilities.unary_unary_inline(servicer.InstallPackage),
       ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): face_utilities.unary_unary_inline(servicer.LaunchApp),
-      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): face_utilities.unary_stream_inline(servicer.ListPackages),
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): face_utilities.unary_unary_inline(servicer.ListPackages),
       ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): face_utilities.unary_unary_inline(servicer.RemovePackage),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
@@ -579,7 +545,7 @@ try:
       ('com.appknox.bakerstreet.Bakerstreet', 'Info'): Device.FromString,
       ('com.appknox.bakerstreet.Bakerstreet', 'InstallPackage'): Message.FromString,
       ('com.appknox.bakerstreet.Bakerstreet', 'LaunchApp'): Message.FromString,
-      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Package.FromString,
+      ('com.appknox.bakerstreet.Bakerstreet', 'ListPackages'): Packages.FromString,
       ('com.appknox.bakerstreet.Bakerstreet', 'RemovePackage'): Message.FromString,
     }
     cardinalities = {
@@ -588,7 +554,7 @@ try:
       'Info': cardinality.Cardinality.UNARY_UNARY,
       'InstallPackage': cardinality.Cardinality.UNARY_UNARY,
       'LaunchApp': cardinality.Cardinality.UNARY_UNARY,
-      'ListPackages': cardinality.Cardinality.UNARY_STREAM,
+      'ListPackages': cardinality.Cardinality.UNARY_UNARY,
       'RemovePackage': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)

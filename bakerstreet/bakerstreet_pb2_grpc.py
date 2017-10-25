@@ -44,10 +44,10 @@ class BakerstreetStub(object):
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
-    self.ListPackages = channel.unary_stream(
+    self.ListPackages = channel.unary_unary(
         '/com.appknox.bakerstreet.Bakerstreet/ListPackages',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
-        response_deserializer=bakerstreet__pb2.Package.FromString,
+        response_deserializer=bakerstreet__pb2.Packages.FromString,
         )
 
 
@@ -137,10 +137,10 @@ def add_BakerstreetServicer_to_server(servicer, server):
           request_deserializer=bakerstreet__pb2.Message.FromString,
           response_serializer=bakerstreet__pb2.Message.SerializeToString,
       ),
-      'ListPackages': grpc.unary_stream_rpc_method_handler(
+      'ListPackages': grpc.unary_unary_rpc_method_handler(
           servicer.ListPackages,
           request_deserializer=bakerstreet__pb2.Message.FromString,
-          response_serializer=bakerstreet__pb2.Package.SerializeToString,
+          response_serializer=bakerstreet__pb2.Packages.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
