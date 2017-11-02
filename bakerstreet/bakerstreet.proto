@@ -3,8 +3,9 @@ syntax = "proto3";
 package com.appknox.bakerstreet;
 
 message Message {
-  string Title = 1;
-  string Description = 2;
+  string Data  = 1;
+  string Title = 2;
+  string Description = 3;
 }
 
 message Packages {
@@ -31,6 +32,8 @@ service Moriarty {
   rpc RemovePackage(Message) returns (Message);
   rpc InstallPackage(Message) returns (Message);
   rpc ListPackages(Message) returns (Packages);
+  rpc ConfigureProxy(Message) returns (Message);
+  rpc ConfigureGadget(Message) returns (Message);
 }
 
 service Mycroft {

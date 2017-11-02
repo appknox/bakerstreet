@@ -49,6 +49,16 @@ class MoriartyStub(object):
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Packages.FromString,
         )
+    self.ConfigureProxy = channel.unary_unary(
+        '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
+        request_serializer=bakerstreet__pb2.Message.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Message.FromString,
+        )
+    self.ConfigureGadget = channel.unary_unary(
+        '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
+        request_serializer=bakerstreet__pb2.Message.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Message.FromString,
+        )
 
 
 class MoriartyServicer(object):
@@ -104,6 +114,20 @@ class MoriartyServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ConfigureProxy(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ConfigureGadget(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MoriartyServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -141,6 +165,16 @@ def add_MoriartyServicer_to_server(servicer, server):
           servicer.ListPackages,
           request_deserializer=bakerstreet__pb2.Message.FromString,
           response_serializer=bakerstreet__pb2.Packages.SerializeToString,
+      ),
+      'ConfigureProxy': grpc.unary_unary_rpc_method_handler(
+          servicer.ConfigureProxy,
+          request_deserializer=bakerstreet__pb2.Message.FromString,
+          response_serializer=bakerstreet__pb2.Message.SerializeToString,
+      ),
+      'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
+          servicer.ConfigureGadget,
+          request_deserializer=bakerstreet__pb2.Message.FromString,
+          response_serializer=bakerstreet__pb2.Message.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

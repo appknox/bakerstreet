@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bakerstreet.proto',
   package='com.appknox.bakerstreet',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"-\n\x07Message\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\x08Packages\x12\r\n\x05Names\x18\x01 \x03(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t2\xc5\x04\n\x08Moriarty\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a!.com.appknox.bakerstreet.Packages2\xa7\x01\n\x07Mycroft\x12I\n\x04Poll\x12\x1f.com.appknox.bakerstreet.Device\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bPushFinding\x12 .com.appknox.bakerstreet.Finding\x1a .com.appknox.bakerstreet.Messageb\x06proto3')
+  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\";\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\x12\r\n\x05Title\x18\x02 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x03 \x01(\t\"\x19\n\x08Packages\x12\r\n\x05Names\x18\x01 \x03(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t2\xf2\x05\n\x08Moriarty\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a!.com.appknox.bakerstreet.Packages\x12T\n\x0e\x43onfigureProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message2\xa7\x01\n\x07Mycroft\x12I\n\x04Poll\x12\x1f.com.appknox.bakerstreet.Device\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bPushFinding\x12 .com.appknox.bakerstreet.Finding\x1a .com.appknox.bakerstreet.Messageb\x06proto3')
 )
 
 
@@ -33,15 +33,22 @@ _MESSAGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Title', full_name='com.appknox.bakerstreet.Message.Title', index=0,
+      name='Data', full_name='com.appknox.bakerstreet.Message.Data', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Description', full_name='com.appknox.bakerstreet.Message.Description', index=1,
+      name='Title', full_name='com.appknox.bakerstreet.Message.Title', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='Description', full_name='com.appknox.bakerstreet.Message.Description', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -59,7 +66,7 @@ _MESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=46,
-  serialized_end=91,
+  serialized_end=105,
 )
 
 
@@ -89,8 +96,8 @@ _PACKAGES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=93,
-  serialized_end=118,
+  serialized_start=107,
+  serialized_end=132,
 )
 
 
@@ -141,8 +148,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=120,
-  serialized_end=203,
+  serialized_start=134,
+  serialized_end=217,
 )
 
 
@@ -179,8 +186,8 @@ _FINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=205,
-  serialized_end=250,
+  serialized_start=219,
+  serialized_end=264,
 )
 
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
@@ -273,6 +280,16 @@ try:
           request_serializer=Message.SerializeToString,
           response_deserializer=Packages.FromString,
           )
+      self.ConfigureProxy = channel.unary_unary(
+          '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
+          request_serializer=Message.SerializeToString,
+          response_deserializer=Message.FromString,
+          )
+      self.ConfigureGadget = channel.unary_unary(
+          '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
+          request_serializer=Message.SerializeToString,
+          response_deserializer=Message.FromString,
+          )
 
 
   class MoriartyServicer(object):
@@ -328,6 +345,20 @@ try:
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
+    def ConfigureProxy(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def ConfigureGadget(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
 
   def add_MoriartyServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -365,6 +396,16 @@ try:
             servicer.ListPackages,
             request_deserializer=Message.FromString,
             response_serializer=Packages.SerializeToString,
+        ),
+        'ConfigureProxy': grpc.unary_unary_rpc_method_handler(
+            servicer.ConfigureProxy,
+            request_deserializer=Message.FromString,
+            response_serializer=Message.SerializeToString,
+        ),
+        'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
+            servicer.ConfigureGadget,
+            request_deserializer=Message.FromString,
+            response_serializer=Message.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -467,6 +508,14 @@ try:
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def ConfigureProxy(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def ConfigureGadget(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
   class BetaMoriartyStub(object):
@@ -512,6 +561,16 @@ try:
       pass
       raise NotImplementedError()
     ListPackages.future = None
+    def ConfigureProxy(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    ConfigureProxy.future = None
+    def ConfigureGadget(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    ConfigureGadget.future = None
 
 
   def beta_create_Moriarty_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -521,6 +580,8 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Message.FromString,
@@ -530,6 +591,8 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.FromString,
     }
     response_serializers = {
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Device.SerializeToString,
@@ -539,6 +602,8 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.SerializeToString,
     }
     method_implementations = {
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): face_utilities.unary_unary_inline(servicer.ConfigureGadget),
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): face_utilities.unary_unary_inline(servicer.ConfigureProxy),
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): face_utilities.unary_unary_inline(servicer.Echo),
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): face_utilities.unary_unary_inline(servicer.HealthCheck),
       ('com.appknox.bakerstreet.Moriarty', 'Info'): face_utilities.unary_unary_inline(servicer.Info),
@@ -558,6 +623,8 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Message.SerializeToString,
@@ -567,6 +634,8 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.SerializeToString,
     }
     response_deserializers = {
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Device.FromString,
@@ -576,6 +645,8 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.FromString,
     }
     cardinalities = {
+      'ConfigureGadget': cardinality.Cardinality.UNARY_UNARY,
+      'ConfigureProxy': cardinality.Cardinality.UNARY_UNARY,
       'Echo': cardinality.Cardinality.UNARY_UNARY,
       'HealthCheck': cardinality.Cardinality.UNARY_UNARY,
       'Info': cardinality.Cardinality.UNARY_UNARY,
