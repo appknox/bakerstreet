@@ -14,11 +14,6 @@ class MoriartyStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Info = channel.unary_unary(
-        '/com.appknox.bakerstreet.Moriarty/Info',
-        request_serializer=bakerstreet__pb2.Message.SerializeToString,
-        response_deserializer=bakerstreet__pb2.Device.FromString,
-        )
     self.Echo = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/Echo',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
@@ -26,6 +21,11 @@ class MoriartyStub(object):
         )
     self.LaunchApp = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/LaunchApp',
+        request_serializer=bakerstreet__pb2.Message.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Message.FromString,
+        )
+    self.ClearProxy = channel.unary_unary(
+        '/com.appknox.bakerstreet.Moriarty/ClearProxy',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
@@ -44,11 +44,6 @@ class MoriartyStub(object):
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
-    self.ListPackages = channel.unary_unary(
-        '/com.appknox.bakerstreet.Moriarty/ListPackages',
-        request_serializer=bakerstreet__pb2.Message.SerializeToString,
-        response_deserializer=bakerstreet__pb2.Packages.FromString,
-        )
     self.ConfigureProxy = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
@@ -59,18 +54,21 @@ class MoriartyStub(object):
         request_serializer=bakerstreet__pb2.Message.SerializeToString,
         response_deserializer=bakerstreet__pb2.Message.FromString,
         )
+    self.Info = channel.unary_unary(
+        '/com.appknox.bakerstreet.Moriarty/Info',
+        request_serializer=bakerstreet__pb2.Message.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Device.FromString,
+        )
+    self.ListPackages = channel.unary_unary(
+        '/com.appknox.bakerstreet.Moriarty/ListPackages',
+        request_serializer=bakerstreet__pb2.Message.SerializeToString,
+        response_deserializer=bakerstreet__pb2.Packages.FromString,
+        )
 
 
 class MoriartyServicer(object):
   # missing associated documentation comment in .proto file
   pass
-
-  def Info(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
   def Echo(self, request, context):
     # missing associated documentation comment in .proto file
@@ -80,6 +78,13 @@ class MoriartyServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def LaunchApp(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ClearProxy(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -107,13 +112,6 @@ class MoriartyServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListPackages(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def ConfigureProxy(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -128,14 +126,23 @@ class MoriartyServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Info(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListPackages(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MoriartyServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Info': grpc.unary_unary_rpc_method_handler(
-          servicer.Info,
-          request_deserializer=bakerstreet__pb2.Message.FromString,
-          response_serializer=bakerstreet__pb2.Device.SerializeToString,
-      ),
       'Echo': grpc.unary_unary_rpc_method_handler(
           servicer.Echo,
           request_deserializer=bakerstreet__pb2.Message.FromString,
@@ -143,6 +150,11 @@ def add_MoriartyServicer_to_server(servicer, server):
       ),
       'LaunchApp': grpc.unary_unary_rpc_method_handler(
           servicer.LaunchApp,
+          request_deserializer=bakerstreet__pb2.Message.FromString,
+          response_serializer=bakerstreet__pb2.Message.SerializeToString,
+      ),
+      'ClearProxy': grpc.unary_unary_rpc_method_handler(
+          servicer.ClearProxy,
           request_deserializer=bakerstreet__pb2.Message.FromString,
           response_serializer=bakerstreet__pb2.Message.SerializeToString,
       ),
@@ -161,11 +173,6 @@ def add_MoriartyServicer_to_server(servicer, server):
           request_deserializer=bakerstreet__pb2.Message.FromString,
           response_serializer=bakerstreet__pb2.Message.SerializeToString,
       ),
-      'ListPackages': grpc.unary_unary_rpc_method_handler(
-          servicer.ListPackages,
-          request_deserializer=bakerstreet__pb2.Message.FromString,
-          response_serializer=bakerstreet__pb2.Packages.SerializeToString,
-      ),
       'ConfigureProxy': grpc.unary_unary_rpc_method_handler(
           servicer.ConfigureProxy,
           request_deserializer=bakerstreet__pb2.Message.FromString,
@@ -175,6 +182,16 @@ def add_MoriartyServicer_to_server(servicer, server):
           servicer.ConfigureGadget,
           request_deserializer=bakerstreet__pb2.Message.FromString,
           response_serializer=bakerstreet__pb2.Message.SerializeToString,
+      ),
+      'Info': grpc.unary_unary_rpc_method_handler(
+          servicer.Info,
+          request_deserializer=bakerstreet__pb2.Message.FromString,
+          response_serializer=bakerstreet__pb2.Device.SerializeToString,
+      ),
+      'ListPackages': grpc.unary_unary_rpc_method_handler(
+          servicer.ListPackages,
+          request_deserializer=bakerstreet__pb2.Message.FromString,
+          response_serializer=bakerstreet__pb2.Packages.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

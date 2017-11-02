@@ -25,15 +25,17 @@ message Finding {
 }
 
 service Moriarty {
-  rpc Info(Message) returns (Device);
   rpc Echo(Message) returns (Message);
   rpc LaunchApp(Message) returns (Message);
+  rpc ClearProxy(Message) returns (Message);
   rpc HealthCheck(Message) returns (Message);
   rpc RemovePackage(Message) returns (Message);
   rpc InstallPackage(Message) returns (Message);
-  rpc ListPackages(Message) returns (Packages);
   rpc ConfigureProxy(Message) returns (Message);
   rpc ConfigureGadget(Message) returns (Message);
+
+  rpc Info(Message) returns (Device);
+  rpc ListPackages(Message) returns (Packages);
 }
 
 service Mycroft {
