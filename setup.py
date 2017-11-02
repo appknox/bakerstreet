@@ -26,7 +26,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "grpcio==1.4.0",
-        "grpcio-tools",
+        "grpcio-tools==1.4.0",
     ],
     zip_safe=False,
     extras_require={
