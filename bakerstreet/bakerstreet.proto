@@ -9,7 +9,7 @@ message Message {
 }
 
 message Packages {
-  repeated string Names = 1;
+  repeated string Name = 1;
 }
 
 message Device {

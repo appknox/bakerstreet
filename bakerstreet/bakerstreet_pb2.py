@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bakerstreet.proto',
   package='com.appknox.bakerstreet',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\";\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\x12\r\n\x05Title\x18\x02 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x03 \x01(\t\"\x19\n\x08Packages\x12\r\n\x05Names\x18\x01 \x03(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t2\xc4\x06\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12P\n\nClearProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0e\x43onfigureProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12S\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a!.com.appknox.bakerstreet.Packages2\xa7\x01\n\x07Mycroft\x12I\n\x04Poll\x12\x1f.com.appknox.bakerstreet.Device\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bPushFinding\x12 .com.appknox.bakerstreet.Finding\x1a .com.appknox.bakerstreet.Messageb\x06proto3')
+  serialized_pb=_b('\n\x11\x62\x61kerstreet.proto\x12\x17\x63om.appknox.bakerstreet\";\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\x12\r\n\x05Title\x18\x02 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x03 \x01(\t\"\x18\n\x08Packages\x12\x0c\n\x04Name\x18\x01 \x03(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t2\xc4\x06\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12P\n\nClearProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0e\x43onfigureProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12S\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a!.com.appknox.bakerstreet.Packages2\xa7\x01\n\x07Mycroft\x12I\n\x04Poll\x12\x1f.com.appknox.bakerstreet.Device\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bPushFinding\x12 .com.appknox.bakerstreet.Finding\x1a .com.appknox.bakerstreet.Messageb\x06proto3')
 )
 
 
@@ -78,7 +78,7 @@ _PACKAGES = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Names', full_name='com.appknox.bakerstreet.Packages.Names', index=0,
+      name='Name', full_name='com.appknox.bakerstreet.Packages.Name', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -97,7 +97,7 @@ _PACKAGES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=107,
-  serialized_end=132,
+  serialized_end=131,
 )
 
 
@@ -148,8 +148,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=134,
-  serialized_end=217,
+  serialized_start=133,
+  serialized_end=216,
 )
 
 
@@ -186,8 +186,8 @@ _FINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=264,
+  serialized_start=218,
+  serialized_end=263,
 )
 
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
