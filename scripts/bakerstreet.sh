@@ -3,15 +3,12 @@
 BAKERSTREET="bakerstreet"
 PROTOFILE=$BAKERSTREET/$BAKERSTREET.proto
 rm $BAKERSTREET/$BAKERSTREET*{.go,.py}
-protoc -I $BAKERSTREET \
-	--go_out=plugins=grpc:$BAKERSTREET \
+protoc -I . \
+	--go_out=plugins=grpc:. \
 	$PROTOFILE
 
 python -m grpc_tools.protoc \
-	-I $BAKERSTREET \
-	--python_out=$BAKERSTREET \
-	--grpc_python_out=$BAKERSTREET \
+	-I . \
+	--python_out=. \
+	--grpc_python_out=. \
 	$PROTOFILE
-
-sed -i "s/import ${BAKERSTREET}_pb2/import $BAKERSTREET.${BAKERSTREET}_pb2/" $BAKERSTREET/${BAKERSTREET}_pb2_grpc.py
-
