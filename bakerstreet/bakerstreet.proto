@@ -6,11 +6,11 @@ message Message {
   string Data  = 1;
 }
 
-message Packages {
-  repeated Package Package = 1;
+message Apps {
+  repeated App App = 1;
 }
 
-message Package {
+message App {
   string Name = 1;
 }
 
@@ -35,14 +35,14 @@ message Empty{}
 
 service Moriarty {
   rpc Echo(Message) returns (Message);
-  rpc LaunchApp(Package) returns (Message);
+  rpc LaunchApp(App) returns (Message);
   rpc ClearProxy(Empty) returns (Message);
   rpc HealthCheck(Empty) returns (Message);
-  rpc RemovePackage(Package) returns (Message);
+  rpc RemovePackage(App) returns (Message);
   rpc InstallPackage(InstallReq) returns (Message);
   rpc ConfigureProxy(ConfigProxyReq) returns (Message);
   rpc ConfigureGadget(Message) returns (Message);
 
   rpc Info(Empty) returns (Device);
-  rpc ListPackages(Empty) returns (Packages);
+  rpc ListPackages(Empty) returns (Apps);
 }
