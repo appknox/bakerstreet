@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bakerstreet/bakerstreet.proto',
   package='com.appknox.bakerstreet',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x62\x61kerstreet/bakerstreet.proto\x12\x17\x63om.appknox.bakerstreet\";\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\x12\r\n\x05Title\x18\x02 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x03 \x01(\t\"\x18\n\x08Packages\x12\x0c\n\x04Name\x18\x01 \x03(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t2\xc4\x06\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12P\n\nClearProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bHealthCheck\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0eInstallPackage\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12T\n\x0e\x43onfigureProxy\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12I\n\x04Info\x12 .com.appknox.bakerstreet.Message\x1a\x1f.com.appknox.bakerstreet.Device\x12S\n\x0cListPackages\x12 .com.appknox.bakerstreet.Message\x1a!.com.appknox.bakerstreet.Packages2\xa7\x01\n\x07Mycroft\x12I\n\x04Poll\x12\x1f.com.appknox.bakerstreet.Device\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0bPushFinding\x12 .com.appknox.bakerstreet.Finding\x1a .com.appknox.bakerstreet.Messageb\x06proto3')
+  serialized_pb=_b('\n\x1d\x62\x61kerstreet/bakerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"\x17\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\"=\n\x08Packages\x12\x31\n\x07Package\x18\x01 \x03(\x0b\x32 .com.appknox.bakerstreet.Package\"\x17\n\x07Package\x12\x0c\n\x04Name\x18\x01 \x01(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\nInstallReq\x12\x0b\n\x03URL\x18\x01 \x01(\t\"\x10\n\x0e\x43onfigProxyReq\"\x07\n\x05\x45mpty2\xc6\x06\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Package\x1a .com.appknox.bakerstreet.Message\x12N\n\nClearProxy\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\x0bHealthCheck\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Package\x1a .com.appknox.bakerstreet.Message\x12W\n\x0eInstallPackage\x12#.com.appknox.bakerstreet.InstallReq\x1a .com.appknox.bakerstreet.Message\x12[\n\x0e\x43onfigureProxy\x12\'.com.appknox.bakerstreet.ConfigProxyReq\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12G\n\x04Info\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1f.com.appknox.bakerstreet.Device\x12Q\n\x0cListPackages\x12\x1e.com.appknox.bakerstreet.Empty\x1a!.com.appknox.bakerstreet.Packagesb\x06proto3')
 )
 
 
@@ -39,20 +39,6 @@ _MESSAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-    _descriptor.FieldDescriptor(
-      name='Title', full_name='com.appknox.bakerstreet.Message.Title', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='Description', full_name='com.appknox.bakerstreet.Message.Description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
   ],
   extensions=[
   ],
@@ -66,7 +52,7 @@ _MESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=58,
-  serialized_end=117,
+  serialized_end=81,
 )
 
 
@@ -78,8 +64,8 @@ _PACKAGES = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Name', full_name='com.appknox.bakerstreet.Packages.Name', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='Package', full_name='com.appknox.bakerstreet.Packages.Package', index=0,
+      number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -96,8 +82,39 @@ _PACKAGES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=143,
+  serialized_start=83,
+  serialized_end=144,
+)
+
+
+_PACKAGE = _descriptor.Descriptor(
+  name='Package',
+  full_name='com.appknox.bakerstreet.Package',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Name', full_name='com.appknox.bakerstreet.Package.Name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=146,
+  serialized_end=169,
 )
 
 
@@ -148,8 +165,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=145,
-  serialized_end=228,
+  serialized_start=171,
+  serialized_end=254,
 )
 
 
@@ -186,14 +203,98 @@ _FINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=230,
-  serialized_end=275,
+  serialized_start=256,
+  serialized_end=301,
 )
 
+
+_INSTALLREQ = _descriptor.Descriptor(
+  name='InstallReq',
+  full_name='com.appknox.bakerstreet.InstallReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='URL', full_name='com.appknox.bakerstreet.InstallReq.URL', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=303,
+  serialized_end=328,
+)
+
+
+_CONFIGPROXYREQ = _descriptor.Descriptor(
+  name='ConfigProxyReq',
+  full_name='com.appknox.bakerstreet.ConfigProxyReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=330,
+  serialized_end=346,
+)
+
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='com.appknox.bakerstreet.Empty',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=348,
+  serialized_end=355,
+)
+
+_PACKAGES.fields_by_name['Package'].message_type = _PACKAGE
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
 DESCRIPTOR.message_types_by_name['Packages'] = _PACKAGES
+DESCRIPTOR.message_types_by_name['Package'] = _PACKAGE
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 DESCRIPTOR.message_types_by_name['Finding'] = _FINDING
+DESCRIPTOR.message_types_by_name['InstallReq'] = _INSTALLREQ
+DESCRIPTOR.message_types_by_name['ConfigProxyReq'] = _CONFIGPROXYREQ
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), dict(
@@ -210,6 +311,13 @@ Packages = _reflection.GeneratedProtocolMessageType('Packages', (_message.Messag
   ))
 _sym_db.RegisterMessage(Packages)
 
+Package = _reflection.GeneratedProtocolMessageType('Package', (_message.Message,), dict(
+  DESCRIPTOR = _PACKAGE,
+  __module__ = 'bakerstreet.bakerstreet_pb2'
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Package)
+  ))
+_sym_db.RegisterMessage(Package)
+
 Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), dict(
   DESCRIPTOR = _DEVICE,
   __module__ = 'bakerstreet.bakerstreet_pb2'
@@ -223,6 +331,27 @@ Finding = _reflection.GeneratedProtocolMessageType('Finding', (_message.Message,
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Finding)
   ))
 _sym_db.RegisterMessage(Finding)
+
+InstallReq = _reflection.GeneratedProtocolMessageType('InstallReq', (_message.Message,), dict(
+  DESCRIPTOR = _INSTALLREQ,
+  __module__ = 'bakerstreet.bakerstreet_pb2'
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.InstallReq)
+  ))
+_sym_db.RegisterMessage(InstallReq)
+
+ConfigProxyReq = _reflection.GeneratedProtocolMessageType('ConfigProxyReq', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIGPROXYREQ,
+  __module__ = 'bakerstreet.bakerstreet_pb2'
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.ConfigProxyReq)
+  ))
+_sym_db.RegisterMessage(ConfigProxyReq)
+
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
+  DESCRIPTOR = _EMPTY,
+  __module__ = 'bakerstreet.bakerstreet_pb2'
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Empty)
+  ))
+_sym_db.RegisterMessage(Empty)
 
 
 try:
@@ -252,32 +381,32 @@ try:
           )
       self.LaunchApp = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/LaunchApp',
-          request_serializer=Message.SerializeToString,
+          request_serializer=Package.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.ClearProxy = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/ClearProxy',
-          request_serializer=Message.SerializeToString,
+          request_serializer=Empty.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.HealthCheck = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/HealthCheck',
-          request_serializer=Message.SerializeToString,
+          request_serializer=Empty.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.RemovePackage = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/RemovePackage',
-          request_serializer=Message.SerializeToString,
+          request_serializer=Package.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.InstallPackage = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/InstallPackage',
-          request_serializer=Message.SerializeToString,
+          request_serializer=InstallReq.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.ConfigureProxy = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
-          request_serializer=Message.SerializeToString,
+          request_serializer=ConfigProxyReq.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.ConfigureGadget = channel.unary_unary(
@@ -287,12 +416,12 @@ try:
           )
       self.Info = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/Info',
-          request_serializer=Message.SerializeToString,
+          request_serializer=Empty.SerializeToString,
           response_deserializer=Device.FromString,
           )
       self.ListPackages = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/ListPackages',
-          request_serializer=Message.SerializeToString,
+          request_serializer=Empty.SerializeToString,
           response_deserializer=Packages.FromString,
           )
 
@@ -381,32 +510,32 @@ try:
         ),
         'LaunchApp': grpc.unary_unary_rpc_method_handler(
             servicer.LaunchApp,
-            request_deserializer=Message.FromString,
+            request_deserializer=Package.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'ClearProxy': grpc.unary_unary_rpc_method_handler(
             servicer.ClearProxy,
-            request_deserializer=Message.FromString,
+            request_deserializer=Empty.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'HealthCheck': grpc.unary_unary_rpc_method_handler(
             servicer.HealthCheck,
-            request_deserializer=Message.FromString,
+            request_deserializer=Empty.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'RemovePackage': grpc.unary_unary_rpc_method_handler(
             servicer.RemovePackage,
-            request_deserializer=Message.FromString,
+            request_deserializer=Package.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'InstallPackage': grpc.unary_unary_rpc_method_handler(
             servicer.InstallPackage,
-            request_deserializer=Message.FromString,
+            request_deserializer=InstallReq.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'ConfigureProxy': grpc.unary_unary_rpc_method_handler(
             servicer.ConfigureProxy,
-            request_deserializer=Message.FromString,
+            request_deserializer=ConfigProxyReq.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
@@ -416,76 +545,17 @@ try:
         ),
         'Info': grpc.unary_unary_rpc_method_handler(
             servicer.Info,
-            request_deserializer=Message.FromString,
+            request_deserializer=Empty.FromString,
             response_serializer=Device.SerializeToString,
         ),
         'ListPackages': grpc.unary_unary_rpc_method_handler(
             servicer.ListPackages,
-            request_deserializer=Message.FromString,
+            request_deserializer=Empty.FromString,
             response_serializer=Packages.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
         'com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
-    server.add_generic_rpc_handlers((generic_handler,))
-
-
-  class MycroftStub(object):
-    # missing associated documentation comment in .proto file
-    pass
-
-    def __init__(self, channel):
-      """Constructor.
-
-      Args:
-        channel: A grpc.Channel.
-      """
-      self.Poll = channel.unary_unary(
-          '/com.appknox.bakerstreet.Mycroft/Poll',
-          request_serializer=Device.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.PushFinding = channel.unary_unary(
-          '/com.appknox.bakerstreet.Mycroft/PushFinding',
-          request_serializer=Finding.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-
-
-  class MycroftServicer(object):
-    # missing associated documentation comment in .proto file
-    pass
-
-    def Poll(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def PushFinding(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-
-  def add_MycroftServicer_to_server(servicer, server):
-    rpc_method_handlers = {
-        'Poll': grpc.unary_unary_rpc_method_handler(
-            servicer.Poll,
-            request_deserializer=Device.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'PushFinding': grpc.unary_unary_rpc_method_handler(
-            servicer.PushFinding,
-            request_deserializer=Finding.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-    }
-    generic_handler = grpc.method_handlers_generic_handler(
-        'com.appknox.bakerstreet.Mycroft', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -606,16 +676,16 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Empty.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): ConfigProxyReq.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Empty.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'Info'): Empty.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): InstallReq.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Package.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Empty.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Package.FromString,
     }
     response_serializers = {
       ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.SerializeToString,
@@ -652,16 +722,16 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Empty.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): ConfigProxyReq.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Empty.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'Info'): Empty.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): InstallReq.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Package.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Empty.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Package.SerializeToString,
     }
     response_deserializers = {
       ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.FromString,
@@ -689,88 +759,6 @@ try:
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
     return beta_implementations.dynamic_stub(channel, 'com.appknox.bakerstreet.Moriarty', cardinalities, options=stub_options)
-
-
-  class BetaMycroftServicer(object):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This class was generated
-    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
-    # missing associated documentation comment in .proto file
-    pass
-    def Poll(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def PushFinding(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-
-
-  class BetaMycroftStub(object):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This class was generated
-    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
-    # missing associated documentation comment in .proto file
-    pass
-    def Poll(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    Poll.future = None
-    def PushFinding(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    PushFinding.future = None
-
-
-  def beta_create_Mycroft_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This function was
-    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
-    request_deserializers = {
-      ('com.appknox.bakerstreet.Mycroft', 'Poll'): Device.FromString,
-      ('com.appknox.bakerstreet.Mycroft', 'PushFinding'): Finding.FromString,
-    }
-    response_serializers = {
-      ('com.appknox.bakerstreet.Mycroft', 'Poll'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Mycroft', 'PushFinding'): Message.SerializeToString,
-    }
-    method_implementations = {
-      ('com.appknox.bakerstreet.Mycroft', 'Poll'): face_utilities.unary_unary_inline(servicer.Poll),
-      ('com.appknox.bakerstreet.Mycroft', 'PushFinding'): face_utilities.unary_unary_inline(servicer.PushFinding),
-    }
-    server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
-    return beta_implementations.server(method_implementations, options=server_options)
-
-
-  def beta_create_Mycroft_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This function was
-    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
-    request_serializers = {
-      ('com.appknox.bakerstreet.Mycroft', 'Poll'): Device.SerializeToString,
-      ('com.appknox.bakerstreet.Mycroft', 'PushFinding'): Finding.SerializeToString,
-    }
-    response_deserializers = {
-      ('com.appknox.bakerstreet.Mycroft', 'Poll'): Message.FromString,
-      ('com.appknox.bakerstreet.Mycroft', 'PushFinding'): Message.FromString,
-    }
-    cardinalities = {
-      'Poll': cardinality.Cardinality.UNARY_UNARY,
-      'PushFinding': cardinality.Cardinality.UNARY_UNARY,
-    }
-    stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
-    return beta_implementations.dynamic_stub(channel, 'com.appknox.bakerstreet.Mycroft', cardinalities, options=stub_options)
 except ImportError:
   pass
 # @@protoc_insertion_point(module_scope)
