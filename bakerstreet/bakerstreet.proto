@@ -4,12 +4,14 @@ package com.appknox.bakerstreet;
 
 message Message {
   string Data  = 1;
-  string Title = 2;
-  string Description = 3;
 }
 
 message Packages {
-  repeated string Name = 1;
+  repeated Package Package = 1;
+}
+
+message Package {
+  string Name = 1;
 }
 
 message Device {
@@ -24,21 +26,23 @@ message Finding {
   string Description = 2;
 }
 
-service Moriarty {
-  rpc Echo(Message) returns (Message);
-  rpc LaunchApp(Message) returns (Message);
-  rpc ClearProxy(Message) returns (Message);
-  rpc HealthCheck(Message) returns (Message);
-  rpc RemovePackage(Message) returns (Message);
-  rpc InstallPackage(Message) returns (Message);
-  rpc ConfigureProxy(Message) returns (Message);
-  rpc ConfigureGadget(Message) returns (Message);
-
-  rpc Info(Message) returns (Device);
-  rpc ListPackages(Message) returns (Packages);
+message InstallReq {
+  string URL = 1;
 }
 
-service Mycroft {
-  rpc Poll(Device) returns (Message);
-  rpc PushFinding(Finding) returns (Message);
+message ConfigProxyReq {}
+message Empty{}
+
+service Moriarty {
+  rpc Echo(Message) returns (Message);
+  rpc LaunchApp(Package) returns (Message);
+  rpc ClearProxy(Empty) returns (Message);
+  rpc HealthCheck(Empty) returns (Message);
+  rpc RemovePackage(Package) returns (Message);
+  rpc InstallPackage(InstallReq) returns (Message);
+  rpc ConfigureProxy(ConfigProxyReq) returns (Message);
+  rpc ConfigureGadget(Message) returns (Message);
+
+  rpc Info(Empty) returns (Device);
+  rpc ListPackages(Empty) returns (Packages);
 }
