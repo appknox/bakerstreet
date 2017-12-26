@@ -30,7 +30,10 @@ message InstallReq {
   string URL = 1;
 }
 
-message ConfigProxyReq {}
+message ConfigProxyReq {
+  string IP = 1;
+  string PORT = 2;
+}
 message Empty{}
 
 service Moriarty {
