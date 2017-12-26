@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bakerstreet/bakerstreet.proto',
   package='com.appknox.bakerstreet',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x62\x61kerstreet/bakerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"\x17\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\"=\n\x08Packages\x12\x31\n\x07Package\x18\x01 \x03(\x0b\x32 .com.appknox.bakerstreet.Package\"\x17\n\x07Package\x12\x0c\n\x04Name\x18\x01 \x01(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\nInstallReq\x12\x0b\n\x03URL\x18\x01 \x01(\t\"\x10\n\x0e\x43onfigProxyReq\"\x07\n\x05\x45mpty2\xc6\x06\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12O\n\tLaunchApp\x12 .com.appknox.bakerstreet.Package\x1a .com.appknox.bakerstreet.Message\x12N\n\nClearProxy\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\x0bHealthCheck\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12S\n\rRemovePackage\x12 .com.appknox.bakerstreet.Package\x1a .com.appknox.bakerstreet.Message\x12W\n\x0eInstallPackage\x12#.com.appknox.bakerstreet.InstallReq\x1a .com.appknox.bakerstreet.Message\x12[\n\x0e\x43onfigureProxy\x12\'.com.appknox.bakerstreet.ConfigProxyReq\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12G\n\x04Info\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1f.com.appknox.bakerstreet.Device\x12Q\n\x0cListPackages\x12\x1e.com.appknox.bakerstreet.Empty\x1a!.com.appknox.bakerstreet.Packagesb\x06proto3')
+  serialized_pb=_b('\n\x1d\x62\x61kerstreet/bakerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"\x17\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\"1\n\x04\x41pps\x12)\n\x03\x41pp\x18\x01 \x03(\x0b\x32\x1c.com.appknox.bakerstreet.App\"\x13\n\x03\x41pp\x12\x0c\n\x04Name\x18\x01 \x01(\t\"S\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\nInstallReq\x12\x0b\n\x03URL\x18\x01 \x01(\t\"\x10\n\x0e\x43onfigProxyReq\"\x07\n\x05\x45mpty2\xba\x06\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12K\n\tLaunchApp\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12N\n\nClearProxy\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\x0bHealthCheck\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\rRemovePackage\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12W\n\x0eInstallPackage\x12#.com.appknox.bakerstreet.InstallReq\x1a .com.appknox.bakerstreet.Message\x12[\n\x0e\x43onfigureProxy\x12\'.com.appknox.bakerstreet.ConfigProxyReq\x1a .com.appknox.bakerstreet.Message\x12U\n\x0f\x43onfigureGadget\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12G\n\x04Info\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1f.com.appknox.bakerstreet.Device\x12M\n\x0cListPackages\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1d.com.appknox.bakerstreet.Appsb\x06proto3')
 )
 
 
@@ -56,15 +56,15 @@ _MESSAGE = _descriptor.Descriptor(
 )
 
 
-_PACKAGES = _descriptor.Descriptor(
-  name='Packages',
-  full_name='com.appknox.bakerstreet.Packages',
+_APPS = _descriptor.Descriptor(
+  name='Apps',
+  full_name='com.appknox.bakerstreet.Apps',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Package', full_name='com.appknox.bakerstreet.Packages.Package', index=0,
+      name='App', full_name='com.appknox.bakerstreet.Apps.App', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -83,19 +83,19 @@ _PACKAGES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=83,
-  serialized_end=144,
+  serialized_end=132,
 )
 
 
-_PACKAGE = _descriptor.Descriptor(
-  name='Package',
-  full_name='com.appknox.bakerstreet.Package',
+_APP = _descriptor.Descriptor(
+  name='App',
+  full_name='com.appknox.bakerstreet.App',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Name', full_name='com.appknox.bakerstreet.Package.Name', index=0,
+      name='Name', full_name='com.appknox.bakerstreet.App.Name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -113,8 +113,8 @@ _PACKAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=146,
-  serialized_end=169,
+  serialized_start=134,
+  serialized_end=153,
 )
 
 
@@ -165,8 +165,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=254,
+  serialized_start=155,
+  serialized_end=238,
 )
 
 
@@ -203,8 +203,8 @@ _FINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=256,
-  serialized_end=301,
+  serialized_start=240,
+  serialized_end=285,
 )
 
 
@@ -234,8 +234,8 @@ _INSTALLREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=303,
-  serialized_end=328,
+  serialized_start=287,
+  serialized_end=312,
 )
 
 
@@ -258,8 +258,8 @@ _CONFIGPROXYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=330,
-  serialized_end=346,
+  serialized_start=314,
+  serialized_end=330,
 )
 
 
@@ -282,14 +282,14 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=348,
-  serialized_end=355,
+  serialized_start=332,
+  serialized_end=339,
 )
 
-_PACKAGES.fields_by_name['Package'].message_type = _PACKAGE
+_APPS.fields_by_name['App'].message_type = _APP
 DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
-DESCRIPTOR.message_types_by_name['Packages'] = _PACKAGES
-DESCRIPTOR.message_types_by_name['Package'] = _PACKAGE
+DESCRIPTOR.message_types_by_name['Apps'] = _APPS
+DESCRIPTOR.message_types_by_name['App'] = _APP
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 DESCRIPTOR.message_types_by_name['Finding'] = _FINDING
 DESCRIPTOR.message_types_by_name['InstallReq'] = _INSTALLREQ
@@ -304,19 +304,19 @@ Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,
   ))
 _sym_db.RegisterMessage(Message)
 
-Packages = _reflection.GeneratedProtocolMessageType('Packages', (_message.Message,), dict(
-  DESCRIPTOR = _PACKAGES,
+Apps = _reflection.GeneratedProtocolMessageType('Apps', (_message.Message,), dict(
+  DESCRIPTOR = _APPS,
   __module__ = 'bakerstreet.bakerstreet_pb2'
-  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Packages)
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Apps)
   ))
-_sym_db.RegisterMessage(Packages)
+_sym_db.RegisterMessage(Apps)
 
-Package = _reflection.GeneratedProtocolMessageType('Package', (_message.Message,), dict(
-  DESCRIPTOR = _PACKAGE,
+App = _reflection.GeneratedProtocolMessageType('App', (_message.Message,), dict(
+  DESCRIPTOR = _APP,
   __module__ = 'bakerstreet.bakerstreet_pb2'
-  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Package)
+  # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.App)
   ))
-_sym_db.RegisterMessage(Package)
+_sym_db.RegisterMessage(App)
 
 Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), dict(
   DESCRIPTOR = _DEVICE,
@@ -381,7 +381,7 @@ try:
           )
       self.LaunchApp = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/LaunchApp',
-          request_serializer=Package.SerializeToString,
+          request_serializer=App.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.ClearProxy = channel.unary_unary(
@@ -396,7 +396,7 @@ try:
           )
       self.RemovePackage = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/RemovePackage',
-          request_serializer=Package.SerializeToString,
+          request_serializer=App.SerializeToString,
           response_deserializer=Message.FromString,
           )
       self.InstallPackage = channel.unary_unary(
@@ -422,7 +422,7 @@ try:
       self.ListPackages = channel.unary_unary(
           '/com.appknox.bakerstreet.Moriarty/ListPackages',
           request_serializer=Empty.SerializeToString,
-          response_deserializer=Packages.FromString,
+          response_deserializer=Apps.FromString,
           )
 
 
@@ -510,7 +510,7 @@ try:
         ),
         'LaunchApp': grpc.unary_unary_rpc_method_handler(
             servicer.LaunchApp,
-            request_deserializer=Package.FromString,
+            request_deserializer=App.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'ClearProxy': grpc.unary_unary_rpc_method_handler(
@@ -525,7 +525,7 @@ try:
         ),
         'RemovePackage': grpc.unary_unary_rpc_method_handler(
             servicer.RemovePackage,
-            request_deserializer=Package.FromString,
+            request_deserializer=App.FromString,
             response_serializer=Message.SerializeToString,
         ),
         'InstallPackage': grpc.unary_unary_rpc_method_handler(
@@ -551,7 +551,7 @@ try:
         'ListPackages': grpc.unary_unary_rpc_method_handler(
             servicer.ListPackages,
             request_deserializer=Empty.FromString,
-            response_serializer=Packages.SerializeToString,
+            response_serializer=Apps.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -683,9 +683,9 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Empty.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Empty.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): InstallReq.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Package.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): App.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Empty.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Package.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): App.FromString,
     }
     response_serializers = {
       ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.SerializeToString,
@@ -696,7 +696,7 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Device.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): Message.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Packages.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Apps.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.SerializeToString,
     }
     method_implementations = {
@@ -729,9 +729,9 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Empty.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Empty.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): InstallReq.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Package.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): App.SerializeToString,
       ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Empty.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Package.SerializeToString,
+      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): App.SerializeToString,
     }
     response_deserializers = {
       ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.FromString,
@@ -742,7 +742,7 @@ try:
       ('com.appknox.bakerstreet.Moriarty', 'Info'): Device.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): Message.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Packages.FromString,
+      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Apps.FromString,
       ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.FromString,
     }
     cardinalities = {

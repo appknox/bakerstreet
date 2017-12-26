@@ -21,7 +21,7 @@ class MoriartyStub(object):
         )
     self.LaunchApp = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/LaunchApp',
-        request_serializer=bakerstreet_dot_bakerstreet__pb2.Package.SerializeToString,
+        request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
         response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
         )
     self.ClearProxy = channel.unary_unary(
@@ -36,7 +36,7 @@ class MoriartyStub(object):
         )
     self.RemovePackage = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/RemovePackage',
-        request_serializer=bakerstreet_dot_bakerstreet__pb2.Package.SerializeToString,
+        request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
         response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
         )
     self.InstallPackage = channel.unary_unary(
@@ -62,7 +62,7 @@ class MoriartyStub(object):
     self.ListPackages = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/ListPackages',
         request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
-        response_deserializer=bakerstreet_dot_bakerstreet__pb2.Packages.FromString,
+        response_deserializer=bakerstreet_dot_bakerstreet__pb2.Apps.FromString,
         )
 
 
@@ -150,7 +150,7 @@ def add_MoriartyServicer_to_server(servicer, server):
       ),
       'LaunchApp': grpc.unary_unary_rpc_method_handler(
           servicer.LaunchApp,
-          request_deserializer=bakerstreet_dot_bakerstreet__pb2.Package.FromString,
+          request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
           response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
       ),
       'ClearProxy': grpc.unary_unary_rpc_method_handler(
@@ -165,7 +165,7 @@ def add_MoriartyServicer_to_server(servicer, server):
       ),
       'RemovePackage': grpc.unary_unary_rpc_method_handler(
           servicer.RemovePackage,
-          request_deserializer=bakerstreet_dot_bakerstreet__pb2.Package.FromString,
+          request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
           response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
       ),
       'InstallPackage': grpc.unary_unary_rpc_method_handler(
@@ -191,7 +191,7 @@ def add_MoriartyServicer_to_server(servicer, server):
       'ListPackages': grpc.unary_unary_rpc_method_handler(
           servicer.ListPackages,
           request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
-          response_serializer=bakerstreet_dot_bakerstreet__pb2.Packages.SerializeToString,
+          response_serializer=bakerstreet_dot_bakerstreet__pb2.Apps.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
