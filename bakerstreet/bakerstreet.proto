@@ -32,8 +32,10 @@ message InstallReq {
 
 message ConfigProxyReq {
   string IP = 1;
-  string PORT = 2;
+  string Port = 2;
+  repeated string Hosts = 3;
 }
+
 message Empty{}
 
 service Moriarty {
