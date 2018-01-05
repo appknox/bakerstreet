@@ -51,7 +51,7 @@ class MoriartyStub(object):
         )
     self.ConfigureGadget = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
-        request_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
+        request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
         response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
         )
     self.Info = channel.unary_unary(
@@ -180,7 +180,7 @@ def add_MoriartyServicer_to_server(servicer, server):
       ),
       'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
           servicer.ConfigureGadget,
-          request_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
+          request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
           response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
       ),
       'Info': grpc.unary_unary_rpc_method_handler(

@@ -46,7 +46,7 @@ service Moriarty {
   rpc RemovePackage(App) returns (Message);
   rpc InstallPackage(InstallReq) returns (Message);
   rpc ConfigureProxy(ConfigProxyReq) returns (Message);
-  rpc ConfigureGadget(Message) returns (Message);
+  rpc ConfigureGadget(App) returns (Message);
 
   rpc Info(Empty) returns (Device);
   rpc ListPackages(Empty) returns (Apps);
