@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-__VERSION__ = '0.1.19'
+__VERSION__ = '0.1.20'
 
 
 setup(
