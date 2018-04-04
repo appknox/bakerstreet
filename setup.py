@@ -25,8 +25,8 @@ setup(
     keywords='appknox rpc bakerstreet',
     packages=find_packages(),
     install_requires=[
-        "grpcio==1.4.0",
-        "grpcio-tools==1.4.0",
+        "grpcio==1.10.0",
+        "grpcio-tools==1.10.0",
     ],
     zip_safe=False,
     extras_require={
