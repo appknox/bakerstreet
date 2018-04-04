@@ -38,7 +38,7 @@ _MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -69,7 +69,7 @@ _APPS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -100,7 +100,7 @@ _APP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -131,28 +131,28 @@ _DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='IsTablet', full_name='com.appknox.bakerstreet.Device.IsTablet', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Platform', full_name='com.appknox.bakerstreet.Device.Platform', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='PlatformVersion', full_name='com.appknox.bakerstreet.Device.PlatformVersion', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -183,14 +183,14 @@ _FINDING = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Description', full_name='com.appknox.bakerstreet.Finding.Description', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -221,7 +221,7 @@ _INSTALLREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -252,21 +252,21 @@ _CONFIGPROXYREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Port', full_name='com.appknox.bakerstreet.ConfigProxyReq.Port', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Hosts', full_name='com.appknox.bakerstreet.ConfigProxyReq.Hosts', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -375,411 +375,109 @@ Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), d
 _sym_db.RegisterMessage(Empty)
 
 
-try:
-  # THESE ELEMENTS WILL BE DEPRECATED.
-  # Please use the generated *_pb2_grpc.py files instead.
-  import grpc
-  from grpc.beta import implementations as beta_implementations
-  from grpc.beta import interfaces as beta_interfaces
-  from grpc.framework.common import cardinality
-  from grpc.framework.interfaces.face import utilities as face_utilities
 
+_MORIARTY = _descriptor.ServiceDescriptor(
+  name='Moriarty',
+  full_name='com.appknox.bakerstreet.Moriarty',
+  file=DESCRIPTOR,
+  index=0,
+  options=None,
+  serialized_start=383,
+  serialized_end=1205,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Echo',
+    full_name='com.appknox.bakerstreet.Moriarty.Echo',
+    index=0,
+    containing_service=None,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='LaunchApp',
+    full_name='com.appknox.bakerstreet.Moriarty.LaunchApp',
+    index=1,
+    containing_service=None,
+    input_type=_APP,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ClearProxy',
+    full_name='com.appknox.bakerstreet.Moriarty.ClearProxy',
+    index=2,
+    containing_service=None,
+    input_type=_EMPTY,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='HealthCheck',
+    full_name='com.appknox.bakerstreet.Moriarty.HealthCheck',
+    index=3,
+    containing_service=None,
+    input_type=_EMPTY,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RemovePackage',
+    full_name='com.appknox.bakerstreet.Moriarty.RemovePackage',
+    index=4,
+    containing_service=None,
+    input_type=_APP,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='InstallPackage',
+    full_name='com.appknox.bakerstreet.Moriarty.InstallPackage',
+    index=5,
+    containing_service=None,
+    input_type=_INSTALLREQ,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ConfigureProxy',
+    full_name='com.appknox.bakerstreet.Moriarty.ConfigureProxy',
+    index=6,
+    containing_service=None,
+    input_type=_CONFIGPROXYREQ,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ConfigureGadget',
+    full_name='com.appknox.bakerstreet.Moriarty.ConfigureGadget',
+    index=7,
+    containing_service=None,
+    input_type=_APP,
+    output_type=_MESSAGE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Info',
+    full_name='com.appknox.bakerstreet.Moriarty.Info',
+    index=8,
+    containing_service=None,
+    input_type=_EMPTY,
+    output_type=_DEVICE,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListPackages',
+    full_name='com.appknox.bakerstreet.Moriarty.ListPackages',
+    index=9,
+    containing_service=None,
+    input_type=_EMPTY,
+    output_type=_APPS,
+    options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_MORIARTY)
 
-  class MoriartyStub(object):
-    # missing associated documentation comment in .proto file
-    pass
+DESCRIPTOR.services_by_name['Moriarty'] = _MORIARTY
 
-    def __init__(self, channel):
-      """Constructor.
-
-      Args:
-        channel: A grpc.Channel.
-      """
-      self.Echo = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/Echo',
-          request_serializer=Message.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.LaunchApp = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/LaunchApp',
-          request_serializer=App.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.ClearProxy = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/ClearProxy',
-          request_serializer=Empty.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.HealthCheck = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/HealthCheck',
-          request_serializer=Empty.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.RemovePackage = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/RemovePackage',
-          request_serializer=App.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.InstallPackage = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/InstallPackage',
-          request_serializer=InstallReq.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.ConfigureProxy = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
-          request_serializer=ConfigProxyReq.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.ConfigureGadget = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
-          request_serializer=App.SerializeToString,
-          response_deserializer=Message.FromString,
-          )
-      self.Info = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/Info',
-          request_serializer=Empty.SerializeToString,
-          response_deserializer=Device.FromString,
-          )
-      self.ListPackages = channel.unary_unary(
-          '/com.appknox.bakerstreet.Moriarty/ListPackages',
-          request_serializer=Empty.SerializeToString,
-          response_deserializer=Apps.FromString,
-          )
-
-
-  class MoriartyServicer(object):
-    # missing associated documentation comment in .proto file
-    pass
-
-    def Echo(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def LaunchApp(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def ClearProxy(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def HealthCheck(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def RemovePackage(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def InstallPackage(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def ConfigureProxy(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def ConfigureGadget(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def Info(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-    def ListPackages(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-      context.set_details('Method not implemented!')
-      raise NotImplementedError('Method not implemented!')
-
-
-  def add_MoriartyServicer_to_server(servicer, server):
-    rpc_method_handlers = {
-        'Echo': grpc.unary_unary_rpc_method_handler(
-            servicer.Echo,
-            request_deserializer=Message.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'LaunchApp': grpc.unary_unary_rpc_method_handler(
-            servicer.LaunchApp,
-            request_deserializer=App.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'ClearProxy': grpc.unary_unary_rpc_method_handler(
-            servicer.ClearProxy,
-            request_deserializer=Empty.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'HealthCheck': grpc.unary_unary_rpc_method_handler(
-            servicer.HealthCheck,
-            request_deserializer=Empty.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'RemovePackage': grpc.unary_unary_rpc_method_handler(
-            servicer.RemovePackage,
-            request_deserializer=App.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'InstallPackage': grpc.unary_unary_rpc_method_handler(
-            servicer.InstallPackage,
-            request_deserializer=InstallReq.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'ConfigureProxy': grpc.unary_unary_rpc_method_handler(
-            servicer.ConfigureProxy,
-            request_deserializer=ConfigProxyReq.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
-            servicer.ConfigureGadget,
-            request_deserializer=App.FromString,
-            response_serializer=Message.SerializeToString,
-        ),
-        'Info': grpc.unary_unary_rpc_method_handler(
-            servicer.Info,
-            request_deserializer=Empty.FromString,
-            response_serializer=Device.SerializeToString,
-        ),
-        'ListPackages': grpc.unary_unary_rpc_method_handler(
-            servicer.ListPackages,
-            request_deserializer=Empty.FromString,
-            response_serializer=Apps.SerializeToString,
-        ),
-    }
-    generic_handler = grpc.method_handlers_generic_handler(
-        'com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
-    server.add_generic_rpc_handlers((generic_handler,))
-
-
-  class BetaMoriartyServicer(object):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This class was generated
-    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
-    # missing associated documentation comment in .proto file
-    pass
-    def Echo(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def LaunchApp(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def ClearProxy(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def HealthCheck(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def RemovePackage(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def InstallPackage(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def ConfigureProxy(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def ConfigureGadget(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def Info(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def ListPackages(self, request, context):
-      # missing associated documentation comment in .proto file
-      pass
-      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-
-
-  class BetaMoriartyStub(object):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This class was generated
-    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
-    # missing associated documentation comment in .proto file
-    pass
-    def Echo(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    Echo.future = None
-    def LaunchApp(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    LaunchApp.future = None
-    def ClearProxy(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    ClearProxy.future = None
-    def HealthCheck(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    HealthCheck.future = None
-    def RemovePackage(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    RemovePackage.future = None
-    def InstallPackage(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    InstallPackage.future = None
-    def ConfigureProxy(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    ConfigureProxy.future = None
-    def ConfigureGadget(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    ConfigureGadget.future = None
-    def Info(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    Info.future = None
-    def ListPackages(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-      # missing associated documentation comment in .proto file
-      pass
-      raise NotImplementedError()
-    ListPackages.future = None
-
-
-  def beta_create_Moriarty_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This function was
-    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
-    request_deserializers = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Empty.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): App.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): ConfigProxyReq.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Empty.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): Empty.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): InstallReq.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): App.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Empty.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): App.FromString,
-    }
-    response_serializers = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): Device.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Apps.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.SerializeToString,
-    }
-    method_implementations = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): face_utilities.unary_unary_inline(servicer.ClearProxy),
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): face_utilities.unary_unary_inline(servicer.ConfigureGadget),
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): face_utilities.unary_unary_inline(servicer.ConfigureProxy),
-      ('com.appknox.bakerstreet.Moriarty', 'Echo'): face_utilities.unary_unary_inline(servicer.Echo),
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): face_utilities.unary_unary_inline(servicer.HealthCheck),
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): face_utilities.unary_unary_inline(servicer.Info),
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): face_utilities.unary_unary_inline(servicer.InstallPackage),
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): face_utilities.unary_unary_inline(servicer.LaunchApp),
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): face_utilities.unary_unary_inline(servicer.ListPackages),
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): face_utilities.unary_unary_inline(servicer.RemovePackage),
-    }
-    server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
-    return beta_implementations.server(method_implementations, options=server_options)
-
-
-  def beta_create_Moriarty_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
-    """The Beta API is deprecated for 0.15.0 and later.
-
-    It is recommended to use the GA API (classes and functions in this
-    file not marked beta) for all further purposes. This function was
-    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
-    request_serializers = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Empty.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): App.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): ConfigProxyReq.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Empty.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): Empty.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): InstallReq.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): App.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Empty.SerializeToString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): App.SerializeToString,
-    }
-    response_deserializers = {
-      ('com.appknox.bakerstreet.Moriarty', 'ClearProxy'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureGadget'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ConfigureProxy'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'Echo'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'HealthCheck'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'Info'): Device.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'InstallPackage'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'LaunchApp'): Message.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'ListPackages'): Apps.FromString,
-      ('com.appknox.bakerstreet.Moriarty', 'RemovePackage'): Message.FromString,
-    }
-    cardinalities = {
-      'ClearProxy': cardinality.Cardinality.UNARY_UNARY,
-      'ConfigureGadget': cardinality.Cardinality.UNARY_UNARY,
-      'ConfigureProxy': cardinality.Cardinality.UNARY_UNARY,
-      'Echo': cardinality.Cardinality.UNARY_UNARY,
-      'HealthCheck': cardinality.Cardinality.UNARY_UNARY,
-      'Info': cardinality.Cardinality.UNARY_UNARY,
-      'InstallPackage': cardinality.Cardinality.UNARY_UNARY,
-      'LaunchApp': cardinality.Cardinality.UNARY_UNARY,
-      'ListPackages': cardinality.Cardinality.UNARY_UNARY,
-      'RemovePackage': cardinality.Cardinality.UNARY_UNARY,
-    }
-    stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
-    return beta_implementations.dynamic_stub(channel, 'com.appknox.bakerstreet.Moriarty', cardinalities, options=stub_options)
-except ImportError:
-  pass
 # @@protoc_insertion_point(module_scope)
