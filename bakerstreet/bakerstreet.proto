@@ -19,6 +19,8 @@ message Device {
   bool IsTablet = 2;
   int32 Platform = 3;
   string PlatformVersion = 4;
+  string CpuArchitecture = 5;
+  string Model = 6;
 }
 
 message Finding {
@@ -47,7 +49,7 @@ service Moriarty {
   rpc InstallPackage(InstallReq) returns (Message);
   rpc ConfigureProxy(ConfigProxyReq) returns (Message);
   rpc ConfigureGadget(App) returns (Message);
-
+  rpc Clean(Empty) returns (Message);
   rpc Info(Empty) returns (Device);
   rpc ListPackages(Empty) returns (Apps);
 }
