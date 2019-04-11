@@ -7,8 +7,8 @@ name = "pypi"
 
 [packages]
 
-grpcio = "==1.13.0"
-grpcio-tools = "==1.13.0"
+grpcio = "==1.19.0"
+grpcio-tools = "==1.19.0"
 
 
 [dev-packages]
