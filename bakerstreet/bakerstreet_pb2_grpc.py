@@ -56,7 +56,7 @@ class MoriartyStub(object):
         )
     self.Clean = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/Clean',
-        request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+        request_serializer=bakerstreet_dot_bakerstreet__pb2.CleanOptions.SerializeToString,
         response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
         )
     self.Info = channel.unary_unary(
@@ -197,7 +197,7 @@ def add_MoriartyServicer_to_server(servicer, server):
       ),
       'Clean': grpc.unary_unary_rpc_method_handler(
           servicer.Clean,
-          request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+          request_deserializer=bakerstreet_dot_bakerstreet__pb2.CleanOptions.FromString,
           response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
       ),
       'Info': grpc.unary_unary_rpc_method_handler(

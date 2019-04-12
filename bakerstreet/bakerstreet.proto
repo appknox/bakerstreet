@@ -38,6 +38,10 @@ message ConfigProxyReq {
   repeated string Hosts = 3;
 }
 
+message CleanOptions {
+  bool DryRun = 1;
+}
+
 message Empty{}
 
 service Moriarty {
@@ -49,7 +53,7 @@ service Moriarty {
   rpc InstallPackage(InstallReq) returns (Message);
   rpc ConfigureProxy(ConfigProxyReq) returns (Message);
   rpc ConfigureGadget(App) returns (Message);
-  rpc Clean(Empty) returns (Message);
+  rpc Clean(CleanOptions) returns (Message);
   rpc Info(Empty) returns (Device);
   rpc ListPackages(Empty) returns (Apps);
 }
