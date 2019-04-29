@@ -54,6 +54,11 @@ class MoriartyStub(object):
         request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
         response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
         )
+    self.Clean = channel.unary_unary(
+        '/com.appknox.bakerstreet.Moriarty/Clean',
+        request_serializer=bakerstreet_dot_bakerstreet__pb2.CleanOptions.SerializeToString,
+        response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
+        )
     self.Info = channel.unary_unary(
         '/com.appknox.bakerstreet.Moriarty/Info',
         request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
@@ -126,6 +131,13 @@ class MoriartyServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Clean(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Info(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -181,6 +193,11 @@ def add_MoriartyServicer_to_server(servicer, server):
       'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
           servicer.ConfigureGadget,
           request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
+          response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
+      ),
+      'Clean': grpc.unary_unary_rpc_method_handler(
+          servicer.Clean,
+          request_deserializer=bakerstreet_dot_bakerstreet__pb2.CleanOptions.FromString,
           response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
       ),
       'Info': grpc.unary_unary_rpc_method_handler(
