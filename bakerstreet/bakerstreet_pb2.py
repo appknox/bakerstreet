@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='com.appknox.bakerstreet',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1d\x62\x61kerstreet/bakerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"\x17\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\"1\n\x04\x41pps\x12)\n\x03\x41pp\x18\x01 \x03(\x0b\x32\x1c.com.appknox.bakerstreet.App\"\x13\n\x03\x41pp\x12\x0c\n\x04Name\x18\x01 \x01(\t\"{\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\x12\x17\n\x0f\x43puArchitecture\x18\x05 \x01(\t\x12\r\n\x05Model\x18\x06 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\nInstallReq\x12\x0b\n\x03URL\x18\x01 \x01(\t\"9\n\x0e\x43onfigProxyReq\x12\n\n\x02IP\x18\x01 \x01(\t\x12\x0c\n\x04Port\x18\x02 \x01(\t\x12\r\n\x05Hosts\x18\x03 \x03(\t\"\x1e\n\x0c\x43leanOptions\x12\x0e\n\x06\x44ryRun\x18\x01 \x01(\x08\"\x07\n\x05\x45mpty2\x88\x07\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12K\n\tLaunchApp\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12N\n\nClearProxy\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\x0bHealthCheck\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\rRemovePackage\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12W\n\x0eInstallPackage\x12#.com.appknox.bakerstreet.InstallReq\x1a .com.appknox.bakerstreet.Message\x12[\n\x0e\x43onfigureProxy\x12\'.com.appknox.bakerstreet.ConfigProxyReq\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0f\x43onfigureGadget\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12P\n\x05\x43lean\x12%.com.appknox.bakerstreet.CleanOptions\x1a .com.appknox.bakerstreet.Message\x12G\n\x04Info\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1f.com.appknox.bakerstreet.Device\x12M\n\x0cListPackages\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1d.com.appknox.bakerstreet.Appsb\x06proto3')
+  serialized_pb=_b('\n\x1d\x62\x61kerstreet/bakerstreet.proto\x12\x17\x63om.appknox.bakerstreet\"\x17\n\x07Message\x12\x0c\n\x04\x44\x61ta\x18\x01 \x01(\t\"1\n\x04\x41pps\x12)\n\x03\x41pp\x18\x01 \x03(\x0b\x32\x1c.com.appknox.bakerstreet.App\"\x13\n\x03\x41pp\x12\x0c\n\x04Name\x18\x01 \x01(\t\"{\n\x06\x44\x65vice\x12\x0c\n\x04Uuid\x18\x01 \x01(\t\x12\x10\n\x08IsTablet\x18\x02 \x01(\x08\x12\x10\n\x08Platform\x18\x03 \x01(\x05\x12\x17\n\x0fPlatformVersion\x18\x04 \x01(\t\x12\x17\n\x0f\x43puArchitecture\x18\x05 \x01(\t\x12\r\n\x05Model\x18\x06 \x01(\t\"-\n\x07\x46inding\x12\r\n\x05Title\x18\x01 \x01(\t\x12\x13\n\x0b\x44\x65scription\x18\x02 \x01(\t\"\x19\n\nInstallReq\x12\x0b\n\x03URL\x18\x01 \x01(\t\"s\n\x0e\x43onfigProxyReq\x12\n\n\x02IP\x18\x01 \x01(\t\x12\x0c\n\x04Port\x18\x02 \x01(\t\x12\r\n\x05Hosts\x18\x03 \x03(\t\x12\x11\n\tChainHost\x18\x04 \x01(\t\x12\x11\n\tChainPort\x18\x05 \x01(\t\x12\x12\n\nCaptureAll\x18\x06 \x01(\x08\"\x1e\n\x0c\x43leanOptions\x12\x0e\n\x06\x44ryRun\x18\x01 \x01(\x08\"\x07\n\x05\x45mpty2\x88\x07\n\x08Moriarty\x12J\n\x04\x45\x63ho\x12 .com.appknox.bakerstreet.Message\x1a .com.appknox.bakerstreet.Message\x12K\n\tLaunchApp\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12N\n\nClearProxy\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\x0bHealthCheck\x12\x1e.com.appknox.bakerstreet.Empty\x1a .com.appknox.bakerstreet.Message\x12O\n\rRemovePackage\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12W\n\x0eInstallPackage\x12#.com.appknox.bakerstreet.InstallReq\x1a .com.appknox.bakerstreet.Message\x12[\n\x0e\x43onfigureProxy\x12\'.com.appknox.bakerstreet.ConfigProxyReq\x1a .com.appknox.bakerstreet.Message\x12Q\n\x0f\x43onfigureGadget\x12\x1c.com.appknox.bakerstreet.App\x1a .com.appknox.bakerstreet.Message\x12P\n\x05\x43lean\x12%.com.appknox.bakerstreet.CleanOptions\x1a .com.appknox.bakerstreet.Message\x12G\n\x04Info\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1f.com.appknox.bakerstreet.Device\x12M\n\x0cListPackages\x12\x1e.com.appknox.bakerstreet.Empty\x1a\x1d.com.appknox.bakerstreet.Appsb\x06proto3')
 )
 
 
@@ -281,6 +281,27 @@ _CONFIGPROXYREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ChainHost', full_name='com.appknox.bakerstreet.ConfigProxyReq.ChainHost', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ChainPort', full_name='com.appknox.bakerstreet.ConfigProxyReq.ChainPort', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CaptureAll', full_name='com.appknox.bakerstreet.ConfigProxyReq.CaptureAll', index=5,
+      number=6, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -294,7 +315,7 @@ _CONFIGPROXYREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=354,
-  serialized_end=411,
+  serialized_end=469,
 )
 
 
@@ -324,8 +345,8 @@ _CLEANOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=413,
-  serialized_end=443,
+  serialized_start=471,
+  serialized_end=501,
 )
 
 
@@ -348,8 +369,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=445,
-  serialized_end=452,
+  serialized_start=503,
+  serialized_end=510,
 )
 
 _APPS.fields_by_name['App'].message_type = _APP
@@ -435,8 +456,8 @@ _MORIARTY = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=455,
-  serialized_end=1359,
+  serialized_start=513,
+  serialized_end=1417,
   methods=[
   _descriptor.MethodDescriptor(
     name='Echo',
