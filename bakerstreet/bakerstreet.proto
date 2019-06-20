@@ -36,6 +36,9 @@ message ConfigProxyReq {
   string IP = 1;
   string Port = 2;
   repeated string Hosts = 3;
+  string ChainHost = 4;
+  string ChainPort = 5;
+  bool CaptureAll = 6;
 }
 
 message CleanOptions {
