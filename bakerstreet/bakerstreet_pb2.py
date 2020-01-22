@@ -386,67 +386,67 @@ DESCRIPTOR.message_types_by_name['CleanOptions'] = _CLEANOPTIONS
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), dict(
-  DESCRIPTOR = _MESSAGE,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGE,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Message)
-  ))
+  })
 _sym_db.RegisterMessage(Message)
 
-Apps = _reflection.GeneratedProtocolMessageType('Apps', (_message.Message,), dict(
-  DESCRIPTOR = _APPS,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+Apps = _reflection.GeneratedProtocolMessageType('Apps', (_message.Message,), {
+  'DESCRIPTOR' : _APPS,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Apps)
-  ))
+  })
 _sym_db.RegisterMessage(Apps)
 
-App = _reflection.GeneratedProtocolMessageType('App', (_message.Message,), dict(
-  DESCRIPTOR = _APP,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+App = _reflection.GeneratedProtocolMessageType('App', (_message.Message,), {
+  'DESCRIPTOR' : _APP,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.App)
-  ))
+  })
 _sym_db.RegisterMessage(App)
 
-Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), dict(
-  DESCRIPTOR = _DEVICE,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), {
+  'DESCRIPTOR' : _DEVICE,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Device)
-  ))
+  })
 _sym_db.RegisterMessage(Device)
 
-Finding = _reflection.GeneratedProtocolMessageType('Finding', (_message.Message,), dict(
-  DESCRIPTOR = _FINDING,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+Finding = _reflection.GeneratedProtocolMessageType('Finding', (_message.Message,), {
+  'DESCRIPTOR' : _FINDING,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Finding)
-  ))
+  })
 _sym_db.RegisterMessage(Finding)
 
-InstallReq = _reflection.GeneratedProtocolMessageType('InstallReq', (_message.Message,), dict(
-  DESCRIPTOR = _INSTALLREQ,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+InstallReq = _reflection.GeneratedProtocolMessageType('InstallReq', (_message.Message,), {
+  'DESCRIPTOR' : _INSTALLREQ,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.InstallReq)
-  ))
+  })
 _sym_db.RegisterMessage(InstallReq)
 
-ConfigProxyReq = _reflection.GeneratedProtocolMessageType('ConfigProxyReq', (_message.Message,), dict(
-  DESCRIPTOR = _CONFIGPROXYREQ,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+ConfigProxyReq = _reflection.GeneratedProtocolMessageType('ConfigProxyReq', (_message.Message,), {
+  'DESCRIPTOR' : _CONFIGPROXYREQ,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.ConfigProxyReq)
-  ))
+  })
 _sym_db.RegisterMessage(ConfigProxyReq)
 
-CleanOptions = _reflection.GeneratedProtocolMessageType('CleanOptions', (_message.Message,), dict(
-  DESCRIPTOR = _CLEANOPTIONS,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+CleanOptions = _reflection.GeneratedProtocolMessageType('CleanOptions', (_message.Message,), {
+  'DESCRIPTOR' : _CLEANOPTIONS,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.CleanOptions)
-  ))
+  })
 _sym_db.RegisterMessage(CleanOptions)
 
-Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
-  DESCRIPTOR = _EMPTY,
-  __module__ = 'bakerstreet.bakerstreet_pb2'
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), {
+  'DESCRIPTOR' : _EMPTY,
+  '__module__' : 'bakerstreet.bakerstreet_pb2'
   # @@protoc_insertion_point(class_scope:com.appknox.bakerstreet.Empty)
-  ))
+  })
 _sym_db.RegisterMessage(Empty)
 
 
