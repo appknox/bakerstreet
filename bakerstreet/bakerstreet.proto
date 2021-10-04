@@ -21,6 +21,7 @@ message Device {
   string PlatformVersion = 4;
   string CpuArchitecture = 5;
   string Model = 6;
+  string Name = 7;
 }
 
 message Finding {
