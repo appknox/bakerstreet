@@ -19,14 +19,14 @@ setup(
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.8',
     ],
 
     keywords='appknox rpc bakerstreet',
     packages=find_packages(),
     install_requires=[
-        "grpcio==1.33.2",
-        "grpcio-tools==1.33.2",
+        "grpcio==1.41.0",
+        "grpcio-tools==1.41.0",
     ],
     zip_safe=False,
     extras_require={
