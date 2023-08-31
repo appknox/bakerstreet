@@ -4,7 +4,8 @@ BAKERSTREET="bakerstreet"
 PROTOFILE=$BAKERSTREET/$BAKERSTREET.proto
 rm $BAKERSTREET/$BAKERSTREET*{.go,.py}
 protoc -I . \
-	--go_out=plugins=grpc:. \
+    --go_out=. --go_opt=paths=source_relative \
+    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
 	$PROTOFILE
 
 python -m grpc_tools.protoc \
