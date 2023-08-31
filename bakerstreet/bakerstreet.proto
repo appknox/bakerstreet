@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package com.appknox.bakerstreet;
+option go_package = "github.com/appknox/bakerstreet";
 
 message Message {
   string Data  = 1;
