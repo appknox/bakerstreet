@@ -25,6 +25,27 @@ message Device {
   string Name = 7;
 }
 
+message DeviceV2 {
+  string Platform = 1;
+  string PlatformVersion = 2;
+  string Name = 3;
+  string Address = 4;
+  string SerialNumber = 5;
+  string Model = 6;
+  string CpuArchitecture = 7;
+  bool IsTablet = 8;
+  string AllocationMode = 9;
+  string SimNetwork = 10;
+  string PhoneNumber = 11;
+  string ScreenLock = 12;
+  string VpnPackageName = 13;
+  string PersistentApps = 14;
+  string AgentVersion = 15;
+  string FridaVersion = 16;
+  string ExtraCapabilities = 17;
+  string DeviceIdentifier = 18;
+}
+
 message Finding {
   string Title = 1;
   string Description = 2;
