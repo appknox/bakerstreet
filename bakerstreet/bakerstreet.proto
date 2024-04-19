@@ -26,7 +26,7 @@ message Device {
 }
 
 message DeviceV2 {
-  string Platform = 1;
+  int32 Platform = 1;
   string PlatformVersion = 2;
   string Name = 3;
   string Address = 4;
@@ -81,5 +81,6 @@ service Moriarty {
   rpc ConfigureGadget(App) returns (Message);
   rpc Clean(CleanOptions) returns (Message);
   rpc Info(Empty) returns (Device);
+  rpc InfoV2(Empty) returns (DeviceV2);
   rpc ListPackages(Empty) returns (Apps);
 }

@@ -29,6 +29,7 @@ const (
 	Moriarty_ConfigureGadget_FullMethodName = "/com.appknox.bakerstreet.Moriarty/ConfigureGadget"
 	Moriarty_Clean_FullMethodName           = "/com.appknox.bakerstreet.Moriarty/Clean"
 	Moriarty_Info_FullMethodName            = "/com.appknox.bakerstreet.Moriarty/Info"
+	Moriarty_InfoV2_FullMethodName          = "/com.appknox.bakerstreet.Moriarty/InfoV2"
 	Moriarty_ListPackages_FullMethodName    = "/com.appknox.bakerstreet.Moriarty/ListPackages"
 )
 
@@ -46,6 +47,7 @@ type MoriartyClient interface {
 	ConfigureGadget(ctx context.Context, in *App, opts ...grpc.CallOption) (*Message, error)
 	Clean(ctx context.Context, in *CleanOptions, opts ...grpc.CallOption) (*Message, error)
 	Info(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Device, error)
+	InfoV2(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*DeviceV2, error)
 	ListPackages(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Apps, error)
 }
 
@@ -147,6 +149,15 @@ func (c *moriartyClient) Info(ctx context.Context, in *Empty, opts ...grpc.CallO
 	return out, nil
 }
 
+func (c *moriartyClient) InfoV2(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*DeviceV2, error) {
+	out := new(DeviceV2)
+	err := c.cc.Invoke(ctx, Moriarty_InfoV2_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *moriartyClient) ListPackages(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Apps, error) {
 	out := new(Apps)
 	err := c.cc.Invoke(ctx, Moriarty_ListPackages_FullMethodName, in, out, opts...)
@@ -170,6 +181,7 @@ type MoriartyServer interface {
 	ConfigureGadget(context.Context, *App) (*Message, error)
 	Clean(context.Context, *CleanOptions) (*Message, error)
 	Info(context.Context, *Empty) (*Device, error)
+	InfoV2(context.Context, *Empty) (*DeviceV2, error)
 	ListPackages(context.Context, *Empty) (*Apps, error)
 	mustEmbedUnimplementedMoriartyServer()
 }
@@ -207,6 +219,9 @@ func (UnimplementedMoriartyServer) Clean(context.Context, *CleanOptions) (*Messa
 }
 func (UnimplementedMoriartyServer) Info(context.Context, *Empty) (*Device, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Info not implemented")
+}
+func (UnimplementedMoriartyServer) InfoV2(context.Context, *Empty) (*DeviceV2, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InfoV2 not implemented")
 }
 func (UnimplementedMoriartyServer) ListPackages(context.Context, *Empty) (*Apps, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListPackages not implemented")
@@ -404,6 +419,24 @@ func _Moriarty_Info_Handler(srv interface{}, ctx context.Context, dec func(inter
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Moriarty_InfoV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MoriartyServer).InfoV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Moriarty_InfoV2_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MoriartyServer).InfoV2(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Moriarty_ListPackages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Empty)
 	if err := dec(in); err != nil {
@@ -468,6 +501,10 @@ var Moriarty_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Info",
 			Handler:    _Moriarty_Info_Handler,
+		},
+		{
+			MethodName: "InfoV2",
+			Handler:    _Moriarty_InfoV2_Handler,
 		},
 		{
 			MethodName: "ListPackages",
