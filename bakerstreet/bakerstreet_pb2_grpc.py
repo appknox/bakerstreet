@@ -64,6 +64,11 @@ class MoriartyStub(object):
                 request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Device.FromString,
                 )
+        self.InfoV2 = channel.unary_unary(
+                '/com.appknox.bakerstreet.Moriarty/InfoV2',
+                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                response_deserializer=bakerstreet_dot_bakerstreet__pb2.DeviceV2.FromString,
+                )
         self.ListPackages = channel.unary_unary(
                 '/com.appknox.bakerstreet.Moriarty/ListPackages',
                 request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
@@ -134,6 +139,12 @@ class MoriartyServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def InfoV2(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListPackages(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -192,6 +203,11 @@ def add_MoriartyServicer_to_server(servicer, server):
                     servicer.Info,
                     request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Device.SerializeToString,
+            ),
+            'InfoV2': grpc.unary_unary_rpc_method_handler(
+                    servicer.InfoV2,
+                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    response_serializer=bakerstreet_dot_bakerstreet__pb2.DeviceV2.SerializeToString,
             ),
             'ListPackages': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPackages,
@@ -375,6 +391,23 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(request, target, '/com.appknox.bakerstreet.Moriarty/Info',
             bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Device.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def InfoV2(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/com.appknox.bakerstreet.Moriarty/InfoV2',
+            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            bakerstreet_dot_bakerstreet__pb2.DeviceV2.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

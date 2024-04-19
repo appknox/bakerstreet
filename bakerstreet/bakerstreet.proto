@@ -25,6 +25,26 @@ message Device {
   string Name = 7;
 }
 
+message DeviceV2 {
+  int32 Platform = 1;
+  string PlatformVersion = 2;
+  string Name = 3;
+  string SerialNumber = 4;
+  string Model = 5;
+  string CpuArchitecture = 6;
+  bool IsTablet = 7;
+  string AllocationMode = 8;
+  string SimNetwork = 9;
+  string PhoneNumber = 10;
+  string ScreenLock = 11;
+  string VpnPackageName = 12;
+  string PersistentApps = 13;
+  string AgentVersion = 14;
+  string FridaVersion = 15;
+  string ExtraCapabilities = 16;
+  string DeviceIdentifier = 17;
+}
+
 message Finding {
   string Title = 1;
   string Description = 2;
@@ -60,5 +80,6 @@ service Moriarty {
   rpc ConfigureGadget(App) returns (Message);
   rpc Clean(CleanOptions) returns (Message);
   rpc Info(Empty) returns (Device);
+  rpc InfoV2(Empty) returns (DeviceV2);
   rpc ListPackages(Empty) returns (Apps);
 }
