@@ -156,5 +156,5 @@ testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jar
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.8"
-content-hash = "df8682c72b343449298f16f6cdc5c7ed39dee1fc3b4e142bb23410e1df226665"
+python-versions = "^3.9"
+content-hash = "881c8c66f6b49e737314c6cb8dc11cf065e74876b64a18ff03a01f5cf4237e27"
