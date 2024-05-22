@@ -34,15 +34,19 @@ message DeviceV2 {
   string Model = 6;
   string Name = 7;
   string DeviceIdentifier = 8;
-  string AllocationMode = 9;
-  string SimNetwork = 10;
-  string PhoneNumber = 11;
-  string ScreenLock = 12;
-  string VpnPackageName = 13;
-  string PersistentApps = 14;
-  string ExtraCapabilities = 15;
-  string AgentVersion = 16;
-  string FridaVersion = 17;
+  bool CanRunManual = 9;
+  bool CanRunAutomated = 10;
+  bool HasVnc = 11;
+  bool HasAutomationEngine = 12;
+  bool IsPrivate = 13;
+  string SimNetwork = 14;
+  string PhoneNumber = 15;
+  string ScreenLock = 16;
+  string VpnPackageName = 17;
+  string PersistentApps = 18;
+  string ExtraCapabilities = 19;
+  string AgentVersion = 20;
+  string FridaVersion = 21;
 }
 
 message Finding {
