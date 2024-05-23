@@ -36,9 +36,8 @@ message DeviceV2 {
   string DeviceIdentifier = 8;
   bool CanRunManual = 9;
   bool CanRunAutomated = 10;
-  bool HasVnc = 11;
-  bool HasAutomationEngine = 12;
-  bool IsPrivate = 13;
+  bool HasAutomationEngine = 11;
+  bool HasVnc = 12;
   string SimNetwork = 14;
   string PhoneNumber = 15;
   string ScreenLock = 16;
