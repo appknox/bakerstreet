@@ -12,11 +12,11 @@ keywords = ["appknox", "rpc", "bakerstreet"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-grpcio = "^1.63.0"
-protobuf = "^5.26.1"
+grpcio = "^1.64.0"
+protobuf = "^5.27.0"
 
 [tool.poetry.group.dev.dependencies]
-grpcio-tools = "^1.63.0"
+grpcio-tools = "^1.64.0"
 
 [build-system]
 requires = ["poetry-core"]
