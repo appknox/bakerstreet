@@ -1,4 +1,4 @@
-module github.com/appknox/bakerstreet
+module github.com/appknox/bakerstreet/v2
 
 go 1.22
 
