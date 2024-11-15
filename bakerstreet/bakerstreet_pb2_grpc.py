@@ -5,7 +5,7 @@ import warnings
 
 from bakerstreet import bakerstreet_pb2 as bakerstreet_dot_bakerstreet__pb2
 
-GRPC_GENERATED_VERSION = '1.64.0'
+GRPC_GENERATED_VERSION = '1.63.0'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.65.0'
 SCHEDULED_RELEASE_DATE = 'June 25, 2024'
@@ -99,6 +99,11 @@ class MoriartyStub(object):
                 request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Apps.FromString,
                 _registered_method=True)
+        self.SetScanParameters = channel.unary_unary(
+                '/com.appknox.bakerstreet.Moriarty/SetScanParameters',
+                request_serializer=bakerstreet_dot_bakerstreet__pb2.ScanParameterData.SerializeToString,
+                response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
+                _registered_method=True)
 
 
 class MoriartyServicer(object):
@@ -176,6 +181,12 @@ class MoriartyServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetScanParameters(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MoriartyServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -239,11 +250,15 @@ def add_MoriartyServicer_to_server(servicer, server):
                     request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Apps.SerializeToString,
             ),
+            'SetScanParameters': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetScanParameters,
+                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.ScanParameterData.FromString,
+                    response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -564,6 +579,33 @@ class Moriarty(object):
             '/com.appknox.bakerstreet.Moriarty/ListPackages',
             bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Apps.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetScanParameters(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/com.appknox.bakerstreet.Moriarty/SetScanParameters',
+            bakerstreet_dot_bakerstreet__pb2.ScanParameterData.SerializeToString,
+            bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
             insecure,

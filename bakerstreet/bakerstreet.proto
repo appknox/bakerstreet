@@ -72,6 +72,10 @@ message CleanOptions {
 
 message Empty{}
 
+message ScanParameterData {
+  string data = 1;
+}
+
 service Moriarty {
   rpc Echo(Message) returns (Message);
   rpc LaunchApp(App) returns (Message);
@@ -85,4 +89,5 @@ service Moriarty {
   rpc Info(Empty) returns (Device);
   rpc InfoV2(Empty) returns (DeviceV2);
   rpc ListPackages(Empty) returns (Apps);
+  rpc SetScanParameters(ScanParameterData) returns (Message);
 }
