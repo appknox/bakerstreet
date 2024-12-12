@@ -1,23 +1,41 @@
-[tool.poetry]
+[project]
 name = "bakerstreet"
-version = "2.0.0"
+version = "2.1.0"
 description = "The place where most characters meet. RPC defnition for our services"
-authors = ["Appknox <engineering@appknox.com>"]
-license = "MIT"
+authors = [{ name = "Appknox", email = "engineering@appknox.com" }]
+dependencies = [
+    "grpcio>=1.68.1",
+    "protobuf>=5.29.1",
+]
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+keywords = [
+    "appknox", 
+    "rpc", 
+    "bakerstreet",
+]
 readme = "README.md"
-homepage = "https://github.com/appknox/bakerstreet"
-repository = "https://github.com/appknox/bakerstreet"
-keywords = ["appknox", "rpc", "bakerstreet"]
 
+[project.urls]
+Repository = "https://github.com/appknox/bakerstreet"
+Releases = "https://github.com/appknox/bakerstreet/releases"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-grpcio = "^1.64.0"
-protobuf = "^5.27.0"
-
-[tool.poetry.group.dev.dependencies]
-grpcio-tools = "^1.64.0"
+[dependency-groups]
+dev = [
+    "grpcio-tools>=1.68.1",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.custom]
+dependencies = [
+    "grpcio-tools>=1.68.1"
+]
+path = "hatch_build.py"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "bakerstreet",
+]

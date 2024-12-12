@@ -5,10 +5,8 @@ import warnings
 
 from bakerstreet import bakerstreet_pb2 as bakerstreet_dot_bakerstreet__pb2
 
-GRPC_GENERATED_VERSION = '1.64.0'
+GRPC_GENERATED_VERSION = '1.68.1'
 GRPC_VERSION = grpc.__version__
-EXPECTED_ERROR_RELEASE = '1.65.0'
-SCHEDULED_RELEASE_DATE = 'June 25, 2024'
 _version_not_supported = False
 
 try:
@@ -18,15 +16,12 @@ except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
-    warnings.warn(
+    raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
         + f' but the generated code in bakerstreet/bakerstreet_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
-        + f' This warning will become an error in {EXPECTED_ERROR_RELEASE},'
-        + f' scheduled for release on {SCHEDULED_RELEASE_DATE}.',
-        RuntimeWarning
     )
 
 
@@ -77,6 +72,11 @@ class MoriartyStub(object):
         self.ConfigureGadget = channel.unary_unary(
                 '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
                 request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+                response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
+                _registered_method=True)
+        self.StartAutoPilot = channel.unary_unary(
+                '/com.appknox.bakerstreet.Moriarty/StartAutoPilot',
+                request_serializer=bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.Clean = channel.unary_unary(
@@ -152,6 +152,12 @@ class MoriartyServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StartAutoPilot(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Clean(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -217,6 +223,11 @@ def add_MoriartyServicer_to_server(servicer, server):
             'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigureGadget,
                     request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
+                    response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
+            ),
+            'StartAutoPilot': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartAutoPilot,
+                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'Clean': grpc.unary_unary_rpc_method_handler(
@@ -455,6 +466,33 @@ class Moriarty(object):
             target,
             '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
             bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+            bakerstreet_dot_bakerstreet__pb2.Message.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StartAutoPilot(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/com.appknox.bakerstreet.Moriarty/StartAutoPilot',
+            bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
