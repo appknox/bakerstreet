@@ -46,6 +46,8 @@ message DeviceV2 {
   string ExtraCapabilities = 19;
   string AgentVersion = 20;
   string FridaVersion = 21;
+  string FridaScriptVersion = 22;
+  string AutoPilotVersion = 23;
 }
 
 message Finding {
@@ -67,7 +69,8 @@ message ConfigProxyReq {
 }
 
 message AutoPilotConfig {
-  string AutoPilotPreference = 1;
+  bool DryRun = 1;
+  string AutoPilotPreference = 2;
 }
 
 message CleanOptions {
