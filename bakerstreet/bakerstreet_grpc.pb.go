@@ -30,7 +30,7 @@ type MoriartyClient interface {
 	InstallPackage(ctx context.Context, in *InstallReq, opts ...grpc.CallOption) (*Message, error)
 	ConfigureProxy(ctx context.Context, in *ConfigProxyReq, opts ...grpc.CallOption) (*Message, error)
 	ConfigureGadget(ctx context.Context, in *App, opts ...grpc.CallOption) (*Message, error)
-	StartAutopilot(ctx context.Context, in *AutoPilotConfig, opts ...grpc.CallOption) (*Message, error)
+	StartAutoPilot(ctx context.Context, in *AutoPilotConfig, opts ...grpc.CallOption) (*Message, error)
 	Clean(ctx context.Context, in *CleanOptions, opts ...grpc.CallOption) (*Message, error)
 	Info(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Device, error)
 	InfoV2(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*DeviceV2, error)
@@ -117,9 +117,9 @@ func (c *moriartyClient) ConfigureGadget(ctx context.Context, in *App, opts ...g
 	return out, nil
 }
 
-func (c *moriartyClient) StartAutopilot(ctx context.Context, in *AutoPilotConfig, opts ...grpc.CallOption) (*Message, error) {
+func (c *moriartyClient) StartAutoPilot(ctx context.Context, in *AutoPilotConfig, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/com.appknox.bakerstreet.Moriarty/StartAutopilot", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/com.appknox.bakerstreet.Moriarty/StartAutoPilot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -174,7 +174,7 @@ type MoriartyServer interface {
 	InstallPackage(context.Context, *InstallReq) (*Message, error)
 	ConfigureProxy(context.Context, *ConfigProxyReq) (*Message, error)
 	ConfigureGadget(context.Context, *App) (*Message, error)
-	StartAutopilot(context.Context, *AutoPilotConfig) (*Message, error)
+	StartAutoPilot(context.Context, *AutoPilotConfig) (*Message, error)
 	Clean(context.Context, *CleanOptions) (*Message, error)
 	Info(context.Context, *Empty) (*Device, error)
 	InfoV2(context.Context, *Empty) (*DeviceV2, error)
@@ -210,8 +210,8 @@ func (UnimplementedMoriartyServer) ConfigureProxy(context.Context, *ConfigProxyR
 func (UnimplementedMoriartyServer) ConfigureGadget(context.Context, *App) (*Message, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfigureGadget not implemented")
 }
-func (UnimplementedMoriartyServer) StartAutopilot(context.Context, *AutoPilotConfig) (*Message, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method StartAutopilot not implemented")
+func (UnimplementedMoriartyServer) StartAutoPilot(context.Context, *AutoPilotConfig) (*Message, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StartAutoPilot not implemented")
 }
 func (UnimplementedMoriartyServer) Clean(context.Context, *CleanOptions) (*Message, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Clean not implemented")
@@ -382,20 +382,20 @@ func _Moriarty_ConfigureGadget_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Moriarty_StartAutopilot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Moriarty_StartAutoPilot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AutoPilotConfig)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MoriartyServer).StartAutopilot(ctx, in)
+		return srv.(MoriartyServer).StartAutoPilot(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/com.appknox.bakerstreet.Moriarty/StartAutopilot",
+		FullMethod: "/com.appknox.bakerstreet.Moriarty/StartAutoPilot",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MoriartyServer).StartAutopilot(ctx, req.(*AutoPilotConfig))
+		return srv.(MoriartyServer).StartAutoPilot(ctx, req.(*AutoPilotConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -512,8 +512,8 @@ var Moriarty_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Moriarty_ConfigureGadget_Handler,
 		},
 		{
-			MethodName: "StartAutopilot",
-			Handler:    _Moriarty_StartAutopilot_Handler,
+			MethodName: "StartAutoPilot",
+			Handler:    _Moriarty_StartAutoPilot_Handler,
 		},
 		{
 			MethodName: "Clean",

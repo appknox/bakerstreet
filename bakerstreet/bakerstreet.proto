@@ -85,7 +85,7 @@ service Moriarty {
   rpc InstallPackage(InstallReq) returns (Message);
   rpc ConfigureProxy(ConfigProxyReq) returns (Message);
   rpc ConfigureGadget(App) returns (Message);
-  rpc StartAutopilot(AutoPilotConfig) returns (Message);
+  rpc StartAutoPilot(AutoPilotConfig) returns (Message);
   rpc Clean(CleanOptions) returns (Message);
   rpc Info(Empty) returns (Device);
   rpc InfoV2(Empty) returns (DeviceV2);

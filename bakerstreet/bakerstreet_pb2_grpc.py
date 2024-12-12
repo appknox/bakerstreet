@@ -74,8 +74,8 @@ class MoriartyStub(object):
                 request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
-        self.StartAutopilot = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/StartAutopilot',
+        self.StartAutoPilot = channel.unary_unary(
+                '/com.appknox.bakerstreet.Moriarty/StartAutoPilot',
                 request_serializer=bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
@@ -152,7 +152,7 @@ class MoriartyServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def StartAutopilot(self, request, context):
+    def StartAutoPilot(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -225,8 +225,8 @@ def add_MoriartyServicer_to_server(servicer, server):
                     request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
-            'StartAutopilot': grpc.unary_unary_rpc_method_handler(
-                    servicer.StartAutopilot,
+            'StartAutoPilot': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartAutoPilot,
                     request_deserializer=bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
@@ -478,7 +478,7 @@ class Moriarty(object):
             _registered_method=True)
 
     @staticmethod
-    def StartAutopilot(request,
+    def StartAutoPilot(request,
             target,
             options=(),
             channel_credentials=None,
@@ -491,7 +491,7 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/StartAutopilot',
+            '/com.appknox.bakerstreet.Moriarty/StartAutoPilot',
             bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
