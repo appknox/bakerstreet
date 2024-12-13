@@ -71,6 +71,7 @@ message ConfigProxyReq {
 message AutoPilotConfig {
   bool DryRun = 1;
   string AutoPilotPreference = 2;
+  App App = 3;
 }
 
 message CleanOptions {
