@@ -1,6 +1,6 @@
 [project]
 name = "bakerstreet"
-version = "2.1.0"
+version = "2.2.0"
 description = "The place where most characters meet. RPC defnition for our services"
 authors = [{ name = "Appknox", email = "engineering@appknox.com" }]
 dependencies = [
@@ -10,8 +10,8 @@ dependencies = [
 requires-python = ">=3.12"
 license = { file = "LICENSE" }
 keywords = [
-    "appknox", 
-    "rpc", 
+    "appknox",
+    "rpc",
     "bakerstreet",
 ]
 readme = "README.md"

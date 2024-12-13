@@ -3,7 +3,7 @@ requires-python = ">=3.12"
 
 [[package]]
 name = "bakerstreet"
-version = "2.1.0"
+version = "2.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "grpcio" },
