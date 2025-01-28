@@ -48,6 +48,7 @@ message DeviceV2 {
   string FridaVersion = 21;
   string FridaScriptVersion = 22;
   string AutoPilotVersion = 23;
+  string CustomIdentifier = 24;
 }
 
 message Finding {
