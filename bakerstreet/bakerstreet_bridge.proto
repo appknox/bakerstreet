@@ -1,0 +1,173 @@
+syntax = "proto3";
+
+package com.appknox.bakerstreet;
+option go_package = "github.com/appknox/bakerstreet";
+
+import "bakerstreet/bakerstreet.proto";
+
+
+// ═══════════════════════════════════════════════════════════
+//  COMMAND ENVELOPE — relay pushes commands to device
+//
+//  Commands are strictly sequential per device.
+//  The relay must wait for the current CommandResponse
+//  before sending the next Command.
+// ═══════════════════════════════════════════════════════════
+
+enum CommandType {
+  COMMAND_UNKNOWN          = 0;
+  COMMAND_ECHO             = 1;
+  COMMAND_LAUNCH_APP       = 2;
+  COMMAND_CLEAR_PROXY      = 3;
+  COMMAND_HEALTH_CHECK     = 4;
+  COMMAND_REMOVE_PACKAGE   = 5;
+  COMMAND_INSTALL_PACKAGE  = 6;
+  COMMAND_CONFIGURE_PROXY  = 7;
+  COMMAND_CONFIGURE_GADGET = 8;
+  COMMAND_START_AUTO_PILOT = 9;
+  COMMAND_CLEAN            = 10;
+  COMMAND_INFO             = 11;
+  COMMAND_INFO_V2          = 12;
+  COMMAND_LIST_PACKAGES    = 13;
+}
+
+// Sent from cloud relay → device through the bidi stream.
+message Command {
+  string request_id = 1;          // UUID for request/response correlation
+  CommandType type = 2;           // Which RPC to invoke
+
+  oneof payload {
+    Message echo                     = 10;
+    App launch_app                   = 11;
+    Empty clear_proxy                = 12;
+    Empty health_check               = 13;
+    App remove_package               = 14;
+    InstallReq install_package       = 15;
+    ConfigProxyReq configure_proxy   = 16;
+    App configure_gadget             = 17;
+    AutoPilotConfig start_auto_pilot = 18;
+    CleanOptions clean               = 19;
+    Empty info                       = 20;
+    Empty info_v2                    = 21;
+    Empty list_packages              = 22;
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════
+//  COMMAND RESPONSE — device sends results back to relay
+// ═══════════════════════════════════════════════════════════
+
+// Sent from device → cloud relay through the bidi stream.
+message CommandResponse {
+  string request_id = 1;          // Must match the Command's request_id
+  bool success = 2;
+  string error = 3;               // Error message if success=false
+
+  oneof result {
+    Message message    = 10;      // Echo, LaunchApp, ClearProxy, HealthCheck,
+                                  // RemovePackage, InstallPackage, ConfigureProxy,
+                                  // ConfigureGadget, StartAutoPilot, Clean
+    Device device      = 11;      // Info
+    DeviceV2 device_v2 = 12;      // InfoV2
+    Apps apps          = 13;      // ListPackages
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════
+//  DEVICE REGISTRATION — handshake when stream opens
+// ═══════════════════════════════════════════════════════════
+
+// First message a device sends after opening the stream.
+message DeviceRegistration {
+  string device_id = 1;           // Unique device UUID
+  string custom_identifier = 2;   // Human-readable name / alias
+  int32 platform = 3;             // Platform enum (matches Device.Platform)
+  string agent_version = 4;       // Version of the device agent
+  string auth_token = 5;          // Pre-shared secret or JWT
+}
+
+message RegistrationAck {
+  bool accepted = 1;
+  string message = 2;             // Reason if rejected
+}
+
+
+// ═══════════════════════════════════════════════════════════
+//  BIDI STREAM WRAPPERS
+// ═══════════════════════════════════════════════════════════
+
+// Everything the device sends over the bidi stream.
+message DeviceMessage {
+  oneof payload {
+    DeviceRegistration registration = 1;  // First message after connecting
+    CommandResponse response = 2;         // All subsequent messages
+  }
+}
+
+// Everything the cloud relay sends over the bidi stream.
+message ServerMessage {
+  oneof payload {
+    RegistrationAck ack = 1;       // Reply to registration
+    Command command = 2;           // Command to execute on device
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════
+//  SERVICE: MoriartyBridge — device-facing (bidi stream)
+// ═══════════════════════════════════════════════════════════
+
+service MoriartyBridge {
+  // Device opens this on startup and keeps it alive.
+  // Relay pushes Command messages, device pushes CommandResponse messages.
+  rpc Connect(stream DeviceMessage) returns (stream ServerMessage);
+}
+
+
+// ═══════════════════════════════════════════════════════════
+//  SERVICE: MoriartyDispatch — platform-facing (unary RPCs)
+//
+//  Mirrors the original Moriarty RPCs but each request
+//  carries a device_id for relay routing.
+// ═══════════════════════════════════════════════════════════
+
+message TargetedMessage         { string device_id = 1; Message data = 2; }
+message TargetedApp             { string device_id = 1; App data = 2; }
+message TargetedEmpty           { string device_id = 1; }
+message TargetedInstallReq      { string device_id = 1; InstallReq data = 2; }
+message TargetedConfigProxyReq  { string device_id = 1; ConfigProxyReq data = 2; }
+message TargetedAutoPilotConfig { string device_id = 1; AutoPilotConfig data = 2; }
+message TargetedCleanOptions    { string device_id = 1; CleanOptions data = 2; }
+
+service MoriartyDispatch {
+  rpc Echo(TargetedMessage) returns (Message);
+  rpc LaunchApp(TargetedApp) returns (Message);
+  rpc ClearProxy(TargetedEmpty) returns (Message);
+  rpc HealthCheck(TargetedEmpty) returns (Message);
+  rpc RemovePackage(TargetedApp) returns (Message);
+  rpc InstallPackage(TargetedInstallReq) returns (Message);
+  rpc ConfigureProxy(TargetedConfigProxyReq) returns (Message);
+  rpc ConfigureGadget(TargetedApp) returns (Message);
+  rpc StartAutoPilot(TargetedAutoPilotConfig) returns (Message);
+  rpc Clean(TargetedCleanOptions) returns (Message);
+  rpc Info(TargetedEmpty) returns (Device);
+  rpc InfoV2(TargetedEmpty) returns (DeviceV2);
+  rpc ListPackages(TargetedEmpty) returns (Apps);
+
+  // Discover all currently connected relay devices
+  rpc ListDevices(Empty) returns (DeviceList);
+}
+
+message DeviceList {
+  repeated ConnectedDevice devices = 1;
+}
+
+message ConnectedDevice {
+  string device_id = 1;
+  string custom_identifier = 2;
+  int32 platform = 3;
+  string agent_version = 4;
+  int64 connected_at = 5;         // Unix timestamp
+}

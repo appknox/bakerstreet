@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from bakerstreet import bakerstreet_bridge_pb2 as bakerstreet_dot_bakerstreet__bridge__pb2
 from bakerstreet import bakerstreet_pb2 as bakerstreet_dot_bakerstreet__pb2
 
 GRPC_GENERATED_VERSION = '1.68.1'
@@ -18,14 +19,100 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in bakerstreet/bakerstreet_pb2_grpc.py depends on'
+        + f' but the generated code in bakerstreet/bakerstreet_bridge_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class MoriartyStub(object):
+class MoriartyBridgeStub(object):
+    """═══════════════════════════════════════════════════════════
+    SERVICE: MoriartyBridge — device-facing (bidi stream)
+    ═══════════════════════════════════════════════════════════
+
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Connect = channel.stream_stream(
+                '/com.appknox.bakerstreet.MoriartyBridge/Connect',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.DeviceMessage.SerializeToString,
+                response_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.ServerMessage.FromString,
+                _registered_method=True)
+
+
+class MoriartyBridgeServicer(object):
+    """═══════════════════════════════════════════════════════════
+    SERVICE: MoriartyBridge — device-facing (bidi stream)
+    ═══════════════════════════════════════════════════════════
+
+    """
+
+    def Connect(self, request_iterator, context):
+        """Device opens this on startup and keeps it alive.
+        Relay pushes Command messages, device pushes CommandResponse messages.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_MoriartyBridgeServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Connect': grpc.stream_stream_rpc_method_handler(
+                    servicer.Connect,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.DeviceMessage.FromString,
+                    response_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.ServerMessage.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'com.appknox.bakerstreet.MoriartyBridge', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('com.appknox.bakerstreet.MoriartyBridge', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class MoriartyBridge(object):
+    """═══════════════════════════════════════════════════════════
+    SERVICE: MoriartyBridge — device-facing (bidi stream)
+    ═══════════════════════════════════════════════════════════
+
+    """
+
+    @staticmethod
+    def Connect(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(
+            request_iterator,
+            target,
+            '/com.appknox.bakerstreet.MoriartyBridge/Connect',
+            bakerstreet_dot_bakerstreet__bridge__pb2.DeviceMessage.SerializeToString,
+            bakerstreet_dot_bakerstreet__bridge__pb2.ServerMessage.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
+class MoriartyDispatchStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -35,73 +122,78 @@ class MoriartyStub(object):
             channel: A grpc.Channel.
         """
         self.Echo = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/Echo',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/Echo',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedMessage.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.LaunchApp = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/LaunchApp',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/LaunchApp',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.ClearProxy = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/ClearProxy',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/ClearProxy',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.HealthCheck = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/HealthCheck',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/HealthCheck',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.RemovePackage = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/RemovePackage',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/RemovePackage',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.InstallPackage = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/InstallPackage',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.InstallReq.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/InstallPackage',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedInstallReq.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.ConfigureProxy = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.ConfigProxyReq.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/ConfigureProxy',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedConfigProxyReq.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.ConfigureGadget = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/ConfigureGadget',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.StartAutoPilot = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/StartAutoPilot',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/StartAutoPilot',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedAutoPilotConfig.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.Clean = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/Clean',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.CleanOptions.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/Clean',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedCleanOptions.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
                 _registered_method=True)
         self.Info = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/Info',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/Info',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Device.FromString,
                 _registered_method=True)
         self.InfoV2 = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/InfoV2',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/InfoV2',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.DeviceV2.FromString,
                 _registered_method=True)
         self.ListPackages = channel.unary_unary(
-                '/com.appknox.bakerstreet.Moriarty/ListPackages',
-                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                '/com.appknox.bakerstreet.MoriartyDispatch/ListPackages',
+                request_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
                 response_deserializer=bakerstreet_dot_bakerstreet__pb2.Apps.FromString,
+                _registered_method=True)
+        self.ListDevices = channel.unary_unary(
+                '/com.appknox.bakerstreet.MoriartyDispatch/ListDevices',
+                request_serializer=bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+                response_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.DeviceList.FromString,
                 _registered_method=True)
 
 
-class MoriartyServicer(object):
+class MoriartyDispatchServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Echo(self, request, context):
@@ -182,83 +274,95 @@ class MoriartyServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListDevices(self, request, context):
+        """Discover all currently connected relay devices
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-def add_MoriartyServicer_to_server(servicer, server):
+
+def add_MoriartyDispatchServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Echo': grpc.unary_unary_rpc_method_handler(
                     servicer.Echo,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Message.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedMessage.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'LaunchApp': grpc.unary_unary_rpc_method_handler(
                     servicer.LaunchApp,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'ClearProxy': grpc.unary_unary_rpc_method_handler(
                     servicer.ClearProxy,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'HealthCheck': grpc.unary_unary_rpc_method_handler(
                     servicer.HealthCheck,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'RemovePackage': grpc.unary_unary_rpc_method_handler(
                     servicer.RemovePackage,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'InstallPackage': grpc.unary_unary_rpc_method_handler(
                     servicer.InstallPackage,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.InstallReq.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedInstallReq.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'ConfigureProxy': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigureProxy,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.ConfigProxyReq.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedConfigProxyReq.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'ConfigureGadget': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigureGadget,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.App.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'StartAutoPilot': grpc.unary_unary_rpc_method_handler(
                     servicer.StartAutoPilot,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedAutoPilotConfig.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'Clean': grpc.unary_unary_rpc_method_handler(
                     servicer.Clean,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.CleanOptions.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedCleanOptions.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
             ),
             'Info': grpc.unary_unary_rpc_method_handler(
                     servicer.Info,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Device.SerializeToString,
             ),
             'InfoV2': grpc.unary_unary_rpc_method_handler(
                     servicer.InfoV2,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.DeviceV2.SerializeToString,
             ),
             'ListPackages': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPackages,
-                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    request_deserializer=bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.FromString,
                     response_serializer=bakerstreet_dot_bakerstreet__pb2.Apps.SerializeToString,
+            ),
+            'ListDevices': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDevices,
+                    request_deserializer=bakerstreet_dot_bakerstreet__pb2.Empty.FromString,
+                    response_serializer=bakerstreet_dot_bakerstreet__bridge__pb2.DeviceList.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
+            'com.appknox.bakerstreet.MoriartyDispatch', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('com.appknox.bakerstreet.Moriarty', rpc_method_handlers)
+    server.add_registered_method_handlers('com.appknox.bakerstreet.MoriartyDispatch', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class Moriarty(object):
+class MoriartyDispatch(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -275,8 +379,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/Echo',
-            bakerstreet_dot_bakerstreet__pb2.Message.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/Echo',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedMessage.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -302,8 +406,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/LaunchApp',
-            bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/LaunchApp',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -329,8 +433,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/ClearProxy',
-            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/ClearProxy',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -356,8 +460,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/HealthCheck',
-            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/HealthCheck',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -383,8 +487,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/RemovePackage',
-            bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/RemovePackage',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -410,8 +514,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/InstallPackage',
-            bakerstreet_dot_bakerstreet__pb2.InstallReq.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/InstallPackage',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedInstallReq.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -437,8 +541,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/ConfigureProxy',
-            bakerstreet_dot_bakerstreet__pb2.ConfigProxyReq.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/ConfigureProxy',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedConfigProxyReq.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -464,8 +568,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/ConfigureGadget',
-            bakerstreet_dot_bakerstreet__pb2.App.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/ConfigureGadget',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedApp.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -491,8 +595,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/StartAutoPilot',
-            bakerstreet_dot_bakerstreet__pb2.AutoPilotConfig.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/StartAutoPilot',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedAutoPilotConfig.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -518,8 +622,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/Clean',
-            bakerstreet_dot_bakerstreet__pb2.CleanOptions.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/Clean',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedCleanOptions.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Message.FromString,
             options,
             channel_credentials,
@@ -545,8 +649,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/Info',
-            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/Info',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Device.FromString,
             options,
             channel_credentials,
@@ -572,8 +676,8 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/InfoV2',
-            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/InfoV2',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.DeviceV2.FromString,
             options,
             channel_credentials,
@@ -599,9 +703,36 @@ class Moriarty(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/com.appknox.bakerstreet.Moriarty/ListPackages',
-            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            '/com.appknox.bakerstreet.MoriartyDispatch/ListPackages',
+            bakerstreet_dot_bakerstreet__bridge__pb2.TargetedEmpty.SerializeToString,
             bakerstreet_dot_bakerstreet__pb2.Apps.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDevices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/com.appknox.bakerstreet.MoriartyDispatch/ListDevices',
+            bakerstreet_dot_bakerstreet__pb2.Empty.SerializeToString,
+            bakerstreet_dot_bakerstreet__bridge__pb2.DeviceList.FromString,
             options,
             channel_credentials,
             insecure,
