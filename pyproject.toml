@@ -1,6 +1,6 @@
 [project]
 name = "bakerstreet"
-version = "2.4.0rc1"
+version = "2.4.0rc2"
 description = "The place where most characters meet. RPC defnition for our services"
 authors = [{ name = "Appknox", email = "engineering@appknox.com" }]
 dependencies = [
