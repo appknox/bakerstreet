@@ -79,6 +79,17 @@ message CommandResponse {
 //  DEVICE REGISTRATION — handshake when stream opens
 // ═══════════════════════════════════════════════════════════
 
+// Which agent implementation owns this device's bridge connection. Distinct
+// from CommandType/transport — a device can be Mary or Auguste under either
+// connection_mode (direct or relay); this field is the one explicit signal
+// that survives the relay hop, replacing the agent_version-string/
+// has-explicit-port heuristics direct mode relies on.
+enum AgentKind {
+  AGENT_KIND_UNSPECIFIED = 0;
+  AGENT_KIND_MARY = 1;
+  AGENT_KIND_AUGUSTE = 2;
+}
+
 // First message a device sends after opening the stream.
 message DeviceRegistration {
   string device_id = 1;           // Unique device UUID
@@ -86,6 +97,7 @@ message DeviceRegistration {
   int32 platform = 3;             // Platform enum (matches Device.Platform)
   string agent_version = 4;       // Version of the device agent
   string auth_token = 5;          // Pre-shared secret or JWT
+  AgentKind agent_kind = 6;       // Mary vs Auguste — explicit, relay-safe
 }
 
 message RegistrationAck {
